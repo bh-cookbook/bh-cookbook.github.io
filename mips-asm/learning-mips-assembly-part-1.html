@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../assets/css/main.css" title="default">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- insert javascript for mobile layout drop down -->
+        <script src="../assets/scripts/mobile_nav_bar.js"></script>
+    </head>
+    
+    <body>
+        <div class="header">
+            <h2>
+                <a id="header_title" href="../index.html">
+                    Bug Hunter's Cookbook
+                </a>
+            </h2>
+            <p>written by <a id="about_pg_link" href="#">missing</a></p>
+        </div>
+
+        <!-- sticky nav bar class -->
+        <div class="topnav" id="navbar">
+
+            <!-- desktop drop down layout is display: none on mobile screen -->
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a id="a_color" href="../mips-asm/learning-mips-assembly-part-1.html">MIPS Assembly Basics</a>
+                </button>
+                <div class="dropdown-content">
+                    <a href="../mips-asm/learning-mips-assembly-part-1.html">Part 1: Introduction to MIPS Assembly</a>
+                    <a href="../mips-asm/computer-organization-crash-course-part-2.html">Part 2: Computer Organization Crash Course</a>
+                    <a href="../mips-asm/mips-registers-part-3.html">Part 3: MIPS Registers</a>
+                    <a href="../mips-asm/the-stack-part-4.html">Part 4: The Stack</a>
+                    <a href="../mips-asm/mips-instruction-set-part-5.html">Part 5: MIPS Instruction Set</a>
+                    <a href="../mips-asm/jumps-and-branches-part-6.html">Part 6: Jumps and Branches</a>
+                    <a href="../mips-asm/calling-conventions-part-7.html">Part 7: Calling Conventions</a>
+                </div>
+            </div> 
+            
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a id="a_color" href="#">Embedded VR</a>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Getting Physical Access</a>
+                    <a href="#">Dumping the Firmware</a>
+                    <a href="#">Identifying the Attack Surface</a>
+                    <a href="#">Finding Bugs - Fuzzing</a>
+                    <a href="#">Reverse Engineering the Firmware</a>
+                    <a href="#">Finding Bugs - Static Analysis</a>
+                </div>
+            </div> 
+            
+            <div class="dropdown">
+                <button class="dropbtn"><a id="a_color" href="#">Lab Setup</a></button>
+                <div class="dropdown-content">
+                  <a href="#">Setting up and using MARS MIPS simulator</a>
+                  <a href="#">Labbing on a MIPS qemu VM</a>
+                </div>
+            </div> 
+            <!-- [D] Further Resources DESKTOP dropdown block -->
+            <div class="dropdown">
+                <button class="dropbtn"><a id="a_color" href="./resources.html">Further Resources</a></button>
+                <div class="dropdown-content">
+                  <a href="http://www.devttys0.com/">devttys0</a>
+                  <a href="https://www.amazon.com/Second-Morgan-Kaufmann-Computer-Architecture/dp/0120884216">See MIPS Run</a>
+                  <a href="https://azeria-labs.com/">Azeria Labs</a>
+                </div>
+            </div> 
+            
+            <!-- mobile drop down layout is display: none on desktop -->
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown1')">
+                    MIPS Assembly Basics
+                </button>
+                <div id="mdropdown1">
+                    <a href="../mips-asm/learning-mips-assembly-part-1.html">Part 1: Introduction to MIPS Assembly</a>
+                    <a href="../mips-asm/computer-organization-crash-course-part-2.html">Part 2: Computer Organization Crash Course</a>
+                    <a href="../mips-asm/mips-registers-part-3.html">Part 3: MIPS Registers</a>
+                    <a href="../mips-asm/the-stack-part-4.html">Part 4: The Stack</a>
+                    <a href="../mips-asm/mips-instruction-set-part-5.html">Part 5: MIPS Instruction Set</a>
+                    <a href="../mips-asm/jumps-and-branches-part-6.html">Part 6: Jumps and Branches</a>
+                    <a href="../mips-asm/calling-conventions-part-7.html">Part 7: Calling Conventions</a>
+                </div>
+            </div>
+            
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown2')">
+                    Embedded VR
+                </button>
+                <div id="mdropdown2">
+                    <a href="#">Getting Physical Access</a>
+                    <a href="#">Dumping the Firmware</a>
+                    <a href="#">Identifying the Attack Surface</a>
+                    <a href="#">Finding Bugs - Fuzzing</a>
+                    <a href="#">Reverse Engineering the Firmware</a>
+                    <a href="#">Finding Bugs - Static Analysis</a>
+                </div>
+            </div>
+            
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown3')">
+                    Lab Setup
+                </button>
+                <div id="mdropdown3">
+                    <a href="#">Setting up and using MARS MIPS simulator</a>
+                    <a href="#">Labbing on a MIPS qemu VM</a>
+                </div>
+            </div>
+            <!-- [M] Further Resources MOBILE dropdown block -->
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown4')">
+                    Further Resources
+                </button>
+                <div id="mdropdown4">
+                    <a href="http://www.devttys0.com/">devttys0</a>
+                    <a href="https://www.amazon.com/Second-Morgan-Kaufmann-Computer-Architecture/dp/0120884216">See MIPS Run</a>
+                    <a href="https://azeria-labs.com/">Azeria Labs</a>
+                </div>
+            </div>
+            
+            <!-- button for accessing mobile drop down layout activated on small screen size -->
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="access_mobile_nav_bar()">&#9776;</a>
+
+        <!-- end of navbar -->
+        </div>
+
+        <div class="content">
+            <h3 id="section_head">Part 1: Introduction to MIPS Assembly</h3>
+            <p>Before we can do security research on MIPS devices, we need to learn the basics of the MIPS Instruction Set Architecture. Note that this will not cover more advanced topics such as the cache, exception handling, and floating point or SIMD instructions. This series assumes the reader knows nothing about MIPS-32 assembly and is for those who need a quick crash course to start learning it.</p>
+            
+            <p>If you are already familiar with the concept of assembly, data representation (bits, bytes, words, hex), endianness, memory, and pointers: skip directly to learning about the <a id="styled_link" href="../mips-asm/mips-registers-part-3.html">MIPS registers</a>.</p>
+            
+            <h4 id="section_head">First, what is assembly?</h4>
+            <p>Imagine you are in a room by a window and the only thing inside is a light bulb with a light switch. </p>
+            
+            <p align="center"><img src="../assets/images/light_switch.png"></p>
+            
+            <p>You have a friend that's outside of the room and the only way you can communicate is by turning the light switch on or off. You start simple at first by intending to say "hi" with one flick of the switch. You realize you can represent more words if you continue to turn the light switch on and off in patterns.</p>
+            <p>Similarly, a computer is designed around patterns represented by pre-defined electrical signals of on or off. The signal being turned off is represented with the digit 0 and the signal being on is represented by the digit 1. Via a combination of 1's and 0's we can put them together to form machine code instructions.</p>
+            <p>A machine code instruction is simply a pattern of 1's and 0's that the computer is designed around in hardware to perform some work.</p>
+            <p>This can look like <b id="inline_bold">0011 1100 0000 1001 0000 0000 0110 0100</b></p>
+            <p>However, these numbers are not easily recognizable by people and thus each machine code instruction has a corresponding name.</p>
+            <p>The 1's and 0's previously mentioned above represent the MIPS instruction: <b id="inline_bold">lui $t9, 100</b></p>
+            <p>These assembly instructions are what we are going to learn and is what the computer executes as work.</p>
+            <p>When programmers write code, they typically write code in a higher level language that is even more human readable than assembly. But the computer doesn't directly understand higher level code and can't digest it.</p>
+            <p>So then there is a program that will convert or compile the higher level code into machine code which is now executable by the computer.</p>
+            <p>It's like how after you go grocery shopping, you can't immediately eat the ingredients raw. You have to prepare them by cutting up your food into bite size pieces, putting some oil on the pan, cooking the food, and then you can eat it. In the computer's case, the code has to go through pre-processing, compiling, assembling, and linking before its ready for the computer to execute.</p>
+            
+            <h4 id="section_head">What is MIPS?</h4>
+            <p>Created by some brilliant people at Stanford, MIPS is a reduced instruction set computer (RISC) architecture commonly found in embedded devices such as routers. The acronym MIPS stands for Microprocessor without Interlocked Pipelined Stages. The word <b>pipeline</b> is important and we'll get into that in a moment.</p>
+            
+            <h4 id="section_head">But, why (male models) MIPS?</h4>
+            <p>Your desktop computer is probably an x86 or complex instruction set computer (CISC) which features more flexible programmability but greater power usage. RISC is typically used in embedded devices due to its lower cost and power consumption. MIPS is used greatly for embedded devices and with the advent of the Internet of Things and MIPS going 
+                <a id="styled_link" href="https://www.eetimes.com/document.asp?doc_id=1334087">open source</a>, I think the number of MIPS devices will only increase.
+            </p>
+            <p>Since all MIPS instructions are the same size and the format is regular, it's easy to learn most of the MIPS instruction set!</p>
+            
+            <p id="section_head">What is pipelining?</p>
+            <p>MIPS is designed around the idea of pipelining.</p>
+            <p>It's a methodology for the CPU to process multiple instructions more efficiently at one time by separating the execution of an instruction into stages of a pipeline.</p>
+            <p>Paraphrasing the analogy from the book 
+                <a id="styled_link" href="#">See MIPS Run</a>, the pipeline is like a cafeteria lunch line. Instead of having one person serve you your mashed potatoes, corn, meat loaf, and gravy, the lunch line or pipeline is the idea where each of these servings is separated into a stage in the pipeline. So, one person serves potatoes, while the next person can serve corn at the same time for another customer's plate. In summary, serving multiple people at once at different stages in the lunch line. 
+            </p>
+            
+            <p align="center"><img src="../assets/images/lunch_line.png"></p>
+            
+            <p>When we translate the idea to MIPS, there are five stages in the pipeline:</p>
+            
+            <ol>
+                <li>Instruction Fetch</li>
+                <li>Instruction Decode</li>
+                <li>Execution</li>
+                <li>Memory Access</li>
+                <li>Write Back</li>
+            </ol>
+            
+            <p>Say we have three instructions to execute, they will propagate the pipeline and as soon as the first instruction completes the instruction fetch stage, in the next cycle, that instruction will move on to the instruction decode phase while the next instruction will begin its instruction fetch in the same CPU cycle and so on and so forth.</p>
+            
+            <p><b style="color:green;">With</b> this pipelining model, <b id="inline_bold">three</b> instructions are completed in <b style="color:green;">seven</b> cycles.</p>
+            <div style="display: block; margin-bottom: 50px;overflow-x: auto; ">
+                <table>
+                    <tr>
+                        <th>Cycles</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                    </tr>
+                    <tr> <!-- row 1 -->
+                        <td>Instruction 1</td>
+                        <td>IF</td>
+                        <td>ID</td>
+                        <td>EX</td>
+                        <td>ME</td>
+                        <td>WB</td>
+                    </tr>
+                    <tr> <!-- row 2 -->
+                        <td>Instruction 2</td>
+                        <td></td>
+                        <td>IF</td>
+                        <td>ID</td>
+                        <td>EX</td>
+                        <td>ME</td>
+                        <td>WB</td>
+                    </tr>
+                    <tr>
+                        <td>Instruction 3</td>
+                        <td></td>
+                        <td></td>
+                        <td>IF</td>
+                        <td>ID</td>
+                        <td>EX</td>
+                        <td>ME</td>
+                        <td>WB</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <p><b style="color:red;">Without</b> pipelining, <b id="inline_bold">three</b> instructions are completed in <b style="color:red;">fifteen</b> cycles.</p>
+            
+            <div style="display: block; margin-bottom: 50px;overflow-x: auto;">
+                <table>
+                    <tr>
+                        <th>Cycles</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+                        <th>10</th>
+                        <th>11</th>
+                        <th>12</th>
+                        <th>13</th>
+                        <th>14</th>
+                        <th>15</th>
+                    </tr>
+                    <tr> <!-- row 1 -->
+                        <td>Instruction 1</td>
+                        <td>IF</td>
+                        <td>ID</td>
+                        <td>EX</td>
+                        <td>ME</td>
+                        <td>WB</td>
+                    </tr>
+                    <tr> <!-- row 2 -->
+                        <td>Instruction 2</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>IF</td>
+                        <td>ID</td>
+                        <td>EX</td>
+                        <td>ME</td>
+                        <td>WB</td>
+                    </tr>
+                    <tr>
+                        <td>Instruction 3</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>IF</td>
+                        <td>ID</td>
+                        <td>EX</td>
+                        <td>ME</td>
+                        <td>WB</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <p>But pipelining is not so simple. There can be hold-ups and slow-downs. For example, in our analogy, an order can get messed up or a customer may want to speak to the manager. For the CPU, there are several types of pipeline hazards (structural, data, control). Importantly, one of the main efforts MIPS makes to deal with control hazards that is unique to the architecture is the <b id="inline_bold">branch delay slot</b>. This will be discussed further in 
+                <a id="styled_link" href="./jumps-and-branches-part-6.html">Part 6: Jumps and Branches</a>.
+            </p>
+            
+      
+            <h4>Further Reading</h4>
+            <p>1. <a id="styled_link" href="https://rh6stzxdcl1wf9gj1fkj14uc-wpengine.netdna-ssl.com/wp-content/uploads/2018/01/table-1-RISC-CISC.jpg">RISC vs CISC Table</a></p>
+            <p>2. <a id="styled_link" href="https://en.wikipedia.org/wiki/Instruction_pipelining">Instruction pipelining [wikipedia]</a></p>
+            
+            <p id="next_page"><a href="../mips-asm/computer-organization-crash-course-part-2.html">Part 2: Computer Organization Crash Course</a></p>
+            
+            
+        </div>
+        
+        <!-- javascript for sticky nav bar -->
+        <script>
+            window.onscroll = function() { scroll_sticky_nav_bar() };
+
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop;
+
+            function scroll_sticky_nav_bar() {
+              if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+              } else {
+                navbar.classList.remove("sticky");
+              }
+            }
+        </script>
+        
+    </body>
+    
+</html>

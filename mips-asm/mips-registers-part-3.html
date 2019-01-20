@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../assets/css/main.css" title="default">
+        <link rel="stylesheet" type="text/css" href="../assets/css/table.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- insert javascript for mobile layout drop down -->
+        <script src="../assets/scripts/mobile_nav_bar.js"></script>
+    </head>
+    
+    <body>
+        <div class="header">
+            <h2>
+                <a id="header_title" href="../index.html">
+                    Bug Hunter's Cookbook
+                </a>
+            </h2>
+            <p>written by <a id="about_pg_link" href="#">missing</a></p>
+        </div>
+
+        <!-- sticky nav bar class -->
+        <div class="topnav" id="navbar">
+
+            <!-- desktop drop down layout is display: none on mobile screen -->
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a id="a_color" href="../mips-asm/learning-mips-assembly-part-1.html">MIPS Assembly Basics</a>
+                </button>
+                <div class="dropdown-content">
+                    <a href="../mips-asm/learning-mips-assembly-part-1.html">Part 1: Introduction to MIPS Assembly</a>
+                    <a href="../mips-asm/computer-organization-crash-course-part-2.html">Part 2: Computer Organization Crash Course</a>
+                    <a href="../mips-asm/mips-registers-part-3.html">Part 3: MIPS Registers</a>
+                    <a href="../mips-asm/the-stack-part-4.html">Part 4: The Stack</a>
+                    <a href="../mips-asm/mips-instruction-set-part-5.html">Part 5: MIPS Instruction Set</a>
+                    <a href="../mips-asm/jumps-and-branches-part-6.html">Part 6: Jumps and Branches</a>
+                    <a href="../mips-asm/calling-conventions-part-7.html">Part 7: Calling Conventions</a>
+                </div>
+            </div> 
+            
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a id="a_color" href="#">Embedded VR</a>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Getting Physical Access</a>
+                    <a href="#">Dumping the Firmware</a>
+                    <a href="#">Identifying the Attack Surface</a>
+                    <a href="#">Finding Bugs - Fuzzing</a>
+                    <a href="#">Reverse Engineering the Firmware</a>
+                    <a href="#">Finding Bugs - Static Analysis</a>
+                </div>
+            </div> 
+            
+            <div class="dropdown">
+                <button class="dropbtn"><a id="a_color" href="#">Lab Setup</a></button>
+                <div class="dropdown-content">
+                  <a href="#">Setting up and using MARS MIPS simulator</a>
+                  <a href="#">Labbing on a MIPS qemu VM</a>
+                </div>
+            </div> 
+            <!-- [D] Further Resources DESKTOP dropdown block -->
+            <div class="dropdown">
+                <button class="dropbtn"><a id="a_color" href="./resources.html">Further Resources</a></button>
+                <div class="dropdown-content">
+                  <a href="http://www.devttys0.com/">devttys0</a>
+                  <a href="https://www.amazon.com/Second-Morgan-Kaufmann-Computer-Architecture/dp/0120884216">See MIPS Run</a>
+                  <a href="https://azeria-labs.com/">Azeria Labs</a>
+                </div>
+            </div> 
+            
+            <!-- mobile drop down layout is display: none on desktop -->
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown1')">
+                    MIPS Assembly Basics
+                </button>
+                <div id="mdropdown1">
+                    <a href="../mips-asm/learning-mips-assembly-part-1.html">Part 1: Introduction to MIPS Assembly</a>
+                    <a href="../mips-asm/computer-organization-crash-course-part-2.html">Part 2: Computer Organization Crash Course</a>
+                    <a href="../mips-asm/mips-registers-part-3.html">Part 3: MIPS Registers</a>
+                    <a href="../mips-asm/the-stack-part-4.html">Part 4: The Stack</a>
+                    <a href="../mips-asm/mips-instruction-set-part-5.html">Part 5: MIPS Instruction Set</a>
+                    <a href="../mips-asm/jumps-and-branches-part-6.html">Part 6: Jumps and Branches</a>
+                    <a href="../mips-asm/calling-conventions-part-7.html">Part 7: Calling Conventions</a>
+                </div>
+            </div>
+            
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown2')">
+                    Embedded VR
+                </button>
+                <div id="mdropdown2">
+                    <a href="#">Getting Physical Access</a>
+                    <a href="#">Dumping the Firmware</a>
+                    <a href="#">Identifying the Attack Surface</a>
+                    <a href="#">Finding Bugs - Fuzzing</a>
+                    <a href="#">Reverse Engineering the Firmware</a>
+                    <a href="#">Finding Bugs - Static Analysis</a>
+                </div>
+            </div>
+            
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown3')">
+                    Lab Setup
+                </button>
+                <div id="mdropdown3">
+                    <a href="#">Setting up and using MARS MIPS simulator</a>
+                    <a href="#">Labbing on a MIPS qemu VM</a>
+                </div>
+            </div>
+            <!-- [M] Further Resources MOBILE dropdown block -->
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown4')">
+                    Further Resources
+                </button>
+                <div id="mdropdown4">
+                    <a href="http://www.devttys0.com/">devttys0</a>
+                    <a href="https://www.amazon.com/Second-Morgan-Kaufmann-Computer-Architecture/dp/0120884216">See MIPS Run</a>
+                    <a href="https://azeria-labs.com/">Azeria Labs</a>
+                </div>
+            </div>
+            
+            <!-- button for accessing mobile drop down layout activated on small screen size -->
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="access_mobile_nav_bar()">&#9776;</a>
+
+        <!-- end of navbar -->
+        </div>
+
+        <div class="content">
+            <h3 id="section_head">Part 3: MIPS Registers</h3>
+                    
+            <h4 id="section_head">What is a CPU register?</h4>
+            <p>You can think of a CPU register abstractly as a variable or by analogy a box, it's something you can store values in.</p>
+            <p>A register is a special area of storage in a CPU that is used for math (addition, subtraction), moving values, and storage of pointers (references to memory)</p>
+            <p>In hardware, they are a bunch of flip flops, which you can see <a id="styled_link" href="http://www.visual6502.org/">here</a></p>
+            
+            <h4 id="section_head">What are the MIPS register conventions?</h4>
+            <p>MIPS features 32 general-purpose registers which can be addressed using register numbers $0 through $31 or by their alternative names such as $sp, $gp, etc.</p>
+          
+            <p>This table is adapted from this <a id="styled_link" href="http://logos.cs.uic.edu/366/notes/mips%20quick%20tutorial.htm">site</a> with modifications.</p>
+            
+            <div class="border">
+                <table id="table">
+                    <tr>
+                        <th style="width:20%;">Register Number</th>
+                        <th style="width:20%;">Alternative Name</th>
+                        <th>Conventional Usage</th>
+                    </tr>
+                    <tr> <!-- row 1 -->
+                        <td>$0</td>
+                        <td>$zero</td>
+                        <td>The value zero, used to move values / NOP</td>
+                    </tr>
+                    <tr> <!-- row 2 -->
+                        <td>$1</td>
+                        <td>$at</td>
+                        <td>(assembler temporary) reserved by the assembler</td>
+                    </tr>
+                    <tr> <!-- row 3 -->
+                        <td>$2</td>
+                        <td>$v0</td>
+                        <td>Used to store syscall number / to store return values of function calls like eax in x86</td>
+                    </tr>
+                    <tr> <!-- row 4 -->
+                        <td>$3</td>
+                        <td>$v1</td>
+                        <td>(value) from expression evaluation and function results</td>
+                    </tr>
+                    <tr> <!-- row 5 -->
+                        <td>$4 - $7</td>
+                        <td>$a0 - $a3</td>
+                        <td>(arguments) first four parameters passed to a function, not expected to be saved across function calls</td>
+                    </tr>
+                    <tr> <!-- row 6 -->
+                        <td>$8 - $15</td>
+                        <td>$t0 - $t7</td>
+                        <td>(temporaries) expected for functions to use to store temporary values, values not expected to be saved across function calls.</td>
+                    </tr>
+                    <tr> <!-- row 7 -->
+                        <td>$16 - $23</td>
+                        <td>$s0 - $s7</td>
+                        <td>(saved values) callee saved, preserved across function calls. functions that use one of these registers are expected to save and restore previous values.</td>
+                    </tr>
+                    <tr> <!-- row 7 -->
+                        <td>$24</td>
+                        <td>$t8</td>
+                        <td>(temporaries) the same as $t0 - $t7</td>
+                    </tr>
+                    <tr> <!-- row 8 -->
+                        <td>$25</td>
+                        <td>$t9</td>
+                        <td>(temporaries) the same as $t0 - $t8; however, $t9 is also used to store the address of a shared library during library function calls (example printf).</td>
+                    </tr>
+                    <tr> <!-- row 9 -->
+                        <td>$26 - $27</td>
+                        <td>$k0 - $k1</td>
+                        <td>(kernel) reserved for use by the interrupt handler</td>
+                    </tr>
+                    <tr> <!-- row 10 -->
+                        <td>$28</td>
+                        <td>$gp</td>
+                        <td>(global pointer) points to static data area of program memory</td>
+                    </tr>
+                    <tr> <!-- row 11 -->
+                        <td>$29</td>
+                        <td>$sp</td>
+                        <td>(stack pointer) points to the top of the stack</td>
+                    </tr>
+                    <tr> <!-- row 12 -->
+                        <td>$30</td>
+                        <td>$s8 / $fp</td>
+                        <td>(saved value or frame pointer) pretty much the base pointer (ebp) in x86</td>
+                    </tr>
+                    <tr> <!-- row 13 -->
+                        <td>$31</td>
+                        <td>$ra</td>
+                        <td>(return address) stores the return address during a function call</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <p>Finally there is the program counter ($pc), which contains the current memory address of the instruction that the CPU is executing.</p>
+            
+            <p>The table may be a lot to look at once so keep it handy. Here's a <a id="styled_link" href="#">link</a> of the table by itself for you to print out.</p> 
+            
+            <p>As a summary for the most important registers to know, $a0, $a1, $a2, and $a3 are used to pass arguments to functions, any register starting with <b id="inline_bold">t</b> is <b id="inline_bold">temporary</b> and thus when used, the value isn't expected to be saved across function calls, whereas any register beginning with <b id="inline_bold">s</b> is <b id="inline_bold">saved</b> and expected to persist across function calls.</p>
+              
+            <p id="next_page"><a href="./the-stack-part-4.html">Part 4: The Stack</a></p>
+            
+            
+        </div>
+        
+        <!-- javascript for sticky nav bar -->
+        <script>
+            window.onscroll = function() { scroll_sticky_nav_bar() };
+
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop;
+
+            function scroll_sticky_nav_bar() {
+              if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+              } else {
+                navbar.classList.remove("sticky");
+              }
+            }
+        </script>
+        
+    </body>
+    
+</html>

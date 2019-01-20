@@ -1,0 +1,58 @@
+/* add space between entries */
+.border {
+    display: block;
+    margin-bottom: 50px;
+}
+
+#encoding {
+    /* width: 100%; */
+}
+
+#syntax {
+    /* white-space: nowrap; */
+}
+
+#table {
+    border-collapse: collapse;
+    width: 1200px;
+    font-size: 20px;
+    /* change font here */
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* table border styling */
+#table td, #table th {
+    border: 2px solid black;
+    padding: 8px;
+    font-size: 125%;
+    width: 200px;
+}
+
+/* table text styling */
+#table a {
+    text-decoration: none;
+    color: white;
+}
+
+/* change text color on mouse hover */
+#table a:hover {
+    color: white;
+}
+
+#table tr {
+    background-color: #33323a;
+}
+
+/* change row background color on mouse hover */
+#table tr:hover {
+    background-color: rgb(11, 84, 153);
+}
+
+/* table header styling */
+#table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #2a6491;
+    color: white;
+}

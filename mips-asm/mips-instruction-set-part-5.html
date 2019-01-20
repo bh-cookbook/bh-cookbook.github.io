@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../assets/css/main.css" title="default">
+        <link rel="stylesheet" type="text/css" href="../assets/css/table.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- insert javascript for mobile layout drop down -->
+        <script src="../assets/scripts/mobile_nav_bar.js"></script>
+    </head>
+    
+    <body>
+        <div class="header">
+            <h2>
+                <a id="header_title" href="../index.html">
+                    Bug Hunter's Cookbook
+                </a>
+            </h2>
+            <p>written by <a id="about_pg_link" href="#">missing</a></p>
+        </div>
+
+        <!-- sticky nav bar class -->
+        <div class="topnav" id="navbar">
+
+            <!-- desktop drop down layout is display: none on mobile screen -->
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a id="a_color" href="../mips-asm/learning-mips-assembly-part-1.html">MIPS Assembly Basics</a>
+                </button>
+                <div class="dropdown-content">
+                    <a href="../mips-asm/learning-mips-assembly-part-1.html">Part 1: Introduction to MIPS Assembly</a>
+                    <a href="../mips-asm/computer-organization-crash-course-part-2.html">Part 2: Computer Organization Crash Course</a>
+                    <a href="../mips-asm/mips-registers-part-3.html">Part 3: MIPS Registers</a>
+                    <a href="../mips-asm/the-stack-part-4.html">Part 4: The Stack</a>
+                    <a href="../mips-asm/mips-instruction-set-part-5.html">Part 5: MIPS Instruction Set</a>
+                    <a href="../mips-asm/jumps-and-branches-part-6.html">Part 6: Jumps and Branches</a>
+                    <a href="../mips-asm/calling-conventions-part-7.html">Part 7: Calling Conventions</a>
+                </div>
+            </div> 
+            
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a id="a_color" href="#">Embedded VR</a>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Getting Physical Access</a>
+                    <a href="#">Dumping the Firmware</a>
+                    <a href="#">Identifying the Attack Surface</a>
+                    <a href="#">Finding Bugs - Fuzzing</a>
+                    <a href="#">Reverse Engineering the Firmware</a>
+                    <a href="#">Finding Bugs - Static Analysis</a>
+                </div>
+            </div> 
+            
+            <div class="dropdown">
+                <button class="dropbtn"><a id="a_color" href="#">Lab Setup</a></button>
+                <div class="dropdown-content">
+                  <a href="#">Setting up and using MARS MIPS simulator</a>
+                  <a href="#">Labbing on a MIPS qemu VM</a>
+                </div>
+            </div> 
+            <!-- [D] Further Resources DESKTOP dropdown block -->
+            <div class="dropdown">
+                <button class="dropbtn"><a id="a_color" href="./resources.html">Further Resources</a></button>
+                <div class="dropdown-content">
+                  <a href="http://www.devttys0.com/">devttys0</a>
+                  <a href="https://www.amazon.com/Second-Morgan-Kaufmann-Computer-Architecture/dp/0120884216">See MIPS Run</a>
+                  <a href="https://azeria-labs.com/">Azeria Labs</a>
+                </div>
+            </div> 
+            
+            <!-- mobile drop down layout is display: none on desktop -->
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown1')">
+                    MIPS Assembly Basics
+                </button>
+                <div id="mdropdown1">
+                    <a href="../mips-asm/learning-mips-assembly-part-1.html">Part 1: Introduction to MIPS Assembly</a>
+                    <a href="../mips-asm/computer-organization-crash-course-part-2.html">Part 2: Computer Organization Crash Course</a>
+                    <a href="../mips-asm/mips-registers-part-3.html">Part 3: MIPS Registers</a>
+                    <a href="../mips-asm/the-stack-part-4.html">Part 4: The Stack</a>
+                    <a href="../mips-asm/mips-instruction-set-part-5.html">Part 5: MIPS Instruction Set</a>
+                    <a href="../mips-asm/jumps-and-branches-part-6.html">Part 6: Jumps and Branches</a>
+                    <a href="../mips-asm/calling-conventions-part-7.html">Part 7: Calling Conventions</a>
+                </div>
+            </div>
+            
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown2')">
+                    Embedded VR
+                </button>
+                <div id="mdropdown2">
+                    <a href="#">Getting Physical Access</a>
+                    <a href="#">Dumping the Firmware</a>
+                    <a href="#">Identifying the Attack Surface</a>
+                    <a href="#">Finding Bugs - Fuzzing</a>
+                    <a href="#">Reverse Engineering the Firmware</a>
+                    <a href="#">Finding Bugs - Static Analysis</a>
+                </div>
+            </div>
+            
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown3')">
+                    Lab Setup
+                </button>
+                <div id="mdropdown3">
+                    <a href="#">Setting up and using MARS MIPS simulator</a>
+                    <a href="#">Labbing on a MIPS qemu VM</a>
+                </div>
+            </div>
+            <!-- [M] Further Resources MOBILE dropdown block -->
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown4')">
+                    Further Resources
+                </button>
+                <div id="mdropdown4">
+                    <a href="http://www.devttys0.com/">devttys0</a>
+                    <a href="https://www.amazon.com/Second-Morgan-Kaufmann-Computer-Architecture/dp/0120884216">See MIPS Run</a>
+                    <a href="https://azeria-labs.com/">Azeria Labs</a>
+                </div>
+            </div>
+            
+            <!-- button for accessing mobile drop down layout activated on small screen size -->
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="access_mobile_nav_bar()">&#9776;</a>
+
+        <!-- end of navbar -->
+        </div>
+
+        <div class="content">
+            <h3 id="section_head">Part 5: MIPS Instruction Set</h3>
+            <p>In this section, we will describe the encoding format of MIPS assembly instructions, list the most common MIPS instructions, and discuss the anatomy of pseudo-instructions.</p>
+            
+            <h4 id="section_head">MIPS Instruction Formats</h4>
+            <p>In <a id="styled_link" href="./learning-mips-assembly-part-1.html">Part 1: Introduction to MIPS Assembly</a>, we discussed that assembly instructions are mnemonics for the combination of 1's and 0's that are defined as machine code instructions.</p>
+            <p>MIPS Instructions are always 4 bytes (32 bits) in size. To distinguish one instruction from another, several bits out of the 32 are assigned to represent the operation code (opcode), while other bits are assigned to represent the source and destination registers.</p>
+            <p>These combinations of bits make up several different types of MIPS instruction formats.</p>
+            <p>They are: </p>
+            <ul>
+                <li>R Instructions</li>
+                <li>I Instructions</li>
+                <li>J Instructions</li>
+            </ul>
+            
+            <p>Each instruction format follows a different syntax and encoding which will be described below in <b id="inline_bold">big-endian</b> format. This is also described in greater detail from the MIPS Assembly Wikibook <a id="styled_link" href="https://en.wikibooks.org/wiki/MIPS_Assembly/Instruction_Formats">here</a></p>
+            
+            <h4 id="section_head">R Instruction Format</h4>
+            <p>[<b id="inline_bold">R</b>]<b id="inline_bold">egister</b> instructions have operands that are registers.</p>
+            <p>An R instruction has the machine-code format: </p>
+            <p>[ <b style="color:rgb(255, 0, 0);">opcode</b> (6 bits) ] [ <b style="color:rgb(255, 102, 0);">Rs</b> (5 bits) ] [ <b style="color:yellow;">Rt</b> (5 bits) ] [ <b style="color:green;">Rd</b> (5 bits) ] [ <b style="color:rgb(0, 238, 255);">shift</b> (5 bits) ] [ <b style="color:purple;">function code</b> (6 bits) ]</p>
+            <p>The <b style="color:rgb(255, 0, 0);">opcode</b> is the binary representation of the instruction. Related instructions can have the same opcode to which the <b style="color:purple;">function code</b> bits of the instruction are used to tell the difference.</p>
+            <p>For example, add and addu have the same opcode but different function codes.</p>
+            <p><b style="color:rgb(255, 102, 0);">Rs</b>, <b style="color:yellow;">Rt</b>, and <b style="color:green;">Rd</b> represent <b style="color:rgb(255, 102, 0);">source register</b>, <b style="color:yellow;">target register</b>, and <b style="color:green;">destination registers</b> respectively.</p>
+            <p><b style="color:rgb(0, 238, 255);">shift</b> bits are used with the shift instructions and determine the number of shifts to be performed.</p> 
+            <p>R Instructions that do not directly fit the machine-code format and omit bits for example <b style="color:green;">Rd</b> or <b style="color:rgb(0, 238, 255);">shift</b> bits will have those bits as all 0's.</p>
+            <p>For example, <b style="color:rgb(255, 0, 0);">jr</b> <b style="color:rgb(255, 102, 0);">Rs</b> has the encoding <b style="color:rgb(255, 0, 0);">0000 00</b><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow">0 0000</b> <b style="color:green;">0000 0</b><b style="color:rgb(0, 238, 255);">000 00</b><b style="color:purple;">00 1000</b></p>
+            <p>An incomplete list of R-type instructions is</p>
+            <ul style="text-align:center;">
+                <li>add</li>
+                <li>addu</li>
+                <li>and</li>
+                <li>or</li>
+                <li>sll</li>
+                <li>jr</li>
+            </ul>
+
+            <p>An example of an R-type instruction in binary format would be: <b style="color:rgb(255, 0, 0);">0000 00</b><b style="color:rgb(255, 102, 0);">10 001</b><b style="color:yellow;">1 0010</b> <b style="color:green;">1000 0</b><b style="color:rgb(0, 238, 255);">000 00</b><b style="color:purple;">10 0000</b></p>
+            
+            <p>And the equivalent assembly instruction is: <b style="color:rgb(255, 0, 0);">add</b> <b style="color:green;">$s0</b>, <b style="color:rgb(255, 102, 0);">$s1</b>, <b style="color:yellow;">$s2</b></p>
+            
+            <h4 id="section_head">I Instruction Format</h4>
+            <p>[<b id="inline_bold">I</b>]<b id="inline_bold">mmediate</b> instructions have an operand that is an immediate value to be operated onto a register.</p>
+            <p>An I instruction has the machine-code format: </p>
+            <p>[ <b style="color:rgb(255, 0, 0);">opcode</b> (6 bits) ] [ <b style="color:rgb(255, 102, 0);">Rs</b> (5 bits) ] [ <b style="color:yellow;">Rt</b> (5 bits) ] [ <b style="color:rgb(136, 16, 235)">Immediate</b> (16 bits) ]</p>
+            <p>Just as in R-type instructions, the <b style="color:rgb(255, 0, 0);">opcode</b> is the binary representation of the instruction and <b style="color:rgb(255, 102, 0);">Rs</b> and <b style="color:yellow;">Rt</b> represent <b style="color:rgb(255, 102, 0);">source register</b> and <b style="color:yellow;">target register</b> respectively.</p>
+            <p>The <b style="color:rgb(136, 16, 235)">immediate</b> value is also called the <b style="color:rgb(136, 16, 235)">offset</b> when it comes to the load instructions.</p>
+            <p>An incomplete list of I-type instructions are</p>
+            <ul style="text-align:center;">
+                <li>beq</li>
+                <li>bne</li>
+                <li>addi</li>
+                <li>lb</li>
+                <li>lui</li>
+            </ul>
+            <p>An example of an I instruction in binary format would be: <b style="color:rgb(255, 0, 0);">0010 00</b><b style="color:rgb(255, 102, 0);">11 101</b><b style="color:yellow">1 1101</b> <b style="color:rgb(136, 16, 235)">0000 0000 0000 0100</b></p>
+            
+            <p>And the equivalent assembly instruction is: <b style="color:rgb(255, 0, 0);">addi</b> <b style="color:yellow;">$sp</b>, <b style="color:rgb(255, 102, 0);">$sp</b>, <b style="color:rgb(136, 16, 235)">4</b></p>
+            
+            <h4 id="section_head">J Instruction Format</h4>
+            <p>[<b id="inline_bold">J</b>]<b id="inline_bold">ump</b> instructions describe the format for an instruction where a jump is being performed. Jumps and branches will be described in greater detail in <a id="styled_link" href="./jumps-and-branches-part-6.html">Part 6: Jumps and Branches</a></p>
+            <p>A J instruction has the machine-code format: </p>
+            <p>[ <b style="color:rgb(255, 0, 0);">opcode</b> (6 bits) ] [ <b style="color:rgb(126, 47, 126);">absolute-address</b> (26 bits) ]</p>
+            <p>The <b style="color:rgb(126, 47, 126);">absolute address</b> is a 26-bit shortened memory address that is the destination of the jump.</p>
+            <p>An example of a J instruction in binary format would be: <b style="color:rgb(255, 0, 0);">0000 10</b><b style="color:rgb(126, 47, 126);">00 0001 0000 0000 0000 0000 0011</b></p>
+            
+            <p>And the equivalent assembly instruction is: <b style="color:rgb(255, 0, 0);">j</b> <b style="color:rgb(126, 47, 126);">0x0040000c</b></p>
+            
+            <h4 id="section_head">MIPS Registers Encoding</h4>
+            <p>Rs, Rt, and Rd are to be substituted with the corresponding MIPS registers $0-$31 in binary.</p>
+            <p>For example, the instruction: add $s0, $s1, $s2</p>
+            <p>Using the equivalent register numbers which can be viewed in the table from <a id="styled_link" href="./mips-registers-part-3.html">Part 3: MIPS Registers</a>, the instruction can be read as: add $16, $17, $18</p>
+            <p>So the encoding will be to convert decimal 16, 17, and 18 to binary to get the encoding for Rd, Rs, and Rt.</p>
+            
+            <h4 id="section_head">MIPS Instruction Set Table</h4>
+
+            <p>Below is a table with the most common MIPS-32 instructions adapted from the <a id="styled_link" href="https://en.wikibooks.org/wiki/MIPS_Assembly/Instruction_Formats">MIPS Assembly Wikibook</a> and from <a id="styled_link" href="http://www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html">here</a></p>
+            
+            <p>To learn the instruction set, I recommend setting up a <a id="styled_link" href="#">lab</a> (either MARS, SPIM, or qemu) to test instructions and see what they do.</p>
+            
+            <!-- Color-coded MIPS Instruction Set Table -->
+            <div class="border">
+                <table id="table">
+                    <tr>
+                        <th style="width:5%;">Instr<br>uction Name</th>
+                        <th>Description</th>
+                        <th>Syntax</th>
+                        <th>Operation</th>
+                        <th style="width:5%;">Instr<br>uction Type</th>
+                        <th>Encoding</th>
+                    </tr>
+                    <tr> <!-- row 1 -->
+                        <td>add</td>
+                        <td>add (with overflow)</td>
+                        <td><span style="color:rgb(255, 0, 0);">add</span> <b style="color:green;">Rd</b>, <b style="color:rgb(255, 102, 0);">Rs</b>, <b style="color:yellow;">Rt</b></td>
+                        <td><b style="color:green;">Rd</b> = <b style="color:rgb(255, 102, 0);">Rs</b> + <b style="color:yellow;">Rt</b></td>
+                        <td>R</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 00</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> <b style="color:green;">dddd d</b><span style="color:rgb(0, 238, 255);">000 00</span><b style="color:purple;">10 0000</b></td>
+                    </tr>
+                    <tr> <!-- row 2 -->
+                        <td>addi</td>
+                        <td>add immediate (with overflow)</td>
+                        <td><span style="color:rgb(255, 0, 0);">addi</span> <b style="color:yellow;">Rt</b>, <b style="color:rgb(255, 102, 0);">Rs</b>, <span style="color:rgb(136, 16, 235)">Immediate</span></td>
+                        <td><b style="color:yellow;">Rt</b> = <b style="color:rgb(255, 102, 0);">Rs</b> + <span style="color:rgb(136, 16, 235)">Immediate</span></td>
+                        <td>I</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0010 00</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> <span style="color:rgb(136, 16, 235)">iiii iiii iiii iiii</span></td>
+                    </tr>
+                    <tr> <!-- row 3 -->
+                        <td>addiu</td>
+                        <td>add immediate unsigned (no overflow)</td>
+                        <td><span style="color:rgb(255, 0, 0);">addiu</span> <b style="color:yellow;">Rt</b>, <b style="color:rgb(255, 102, 0);">Rs</b>, <span style="color:rgb(136, 16, 235)">Immediate</span></td>
+                        <td><b style="color:yellow;">Rt</b> = <b style="color:rgb(255, 102, 0);">Rs</b> + <span style="color:rgb(136, 16, 235)">Immediate</span></td>
+                        <td>I</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0010 01</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> <span style="color:rgb(136, 16, 235)">iiii iiii iiii iiii</span></td>
+                    </tr>
+                    <tr> <!-- row 4 -->
+                        <td>addu</td>
+                        <td>add unsigned (no overflow)</td>
+                        <td><span style="color:rgb(255, 0, 0);">addu</span> <b style="color:green;">Rd</b>, <b style="color:rgb(255, 102, 0);">Rs</b>, <b style="color:yellow;">Rt</b></td>
+                        <td><b style="color:green;">Rd</b> = <b style="color:rgb(255, 102, 0);">Rs</b> + <b style="color:yellow;">Rt</b></td>
+                        <td>R</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 00</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> <b style="color:green;">dddd d</b><span style="color:rgb(0, 238, 255);">000 00</span><b style="color:purple;">10 0001</b></td>
+                    </tr>
+                    <tr> <!-- row 5 -->
+                        <td>and</td>
+                        <td>bitwise AND</td>
+                        <td><span style="color:rgb(255, 0, 0);">and</span> <b style="color:green;">Rd</b>, <b style="color:rgb(255, 102, 0);">Rs</b>, <b style="color:yellow;">Rt</b></td>
+                        <td><b style="color:green;">Rd</b> = <b style="color:rgb(255, 102, 0);">Rs</b> & <b style="color:yellow;">Rt</b></td>
+                        <td>R</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 00</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> <b style="color:green;">dddd d</b><span style="color:rgb(0, 238, 255);">000 00</span><b style="color:purple;">10 0100</b></td>
+                    </tr>
+                    <tr> <!-- row 6 -->
+                        <td>andi</td>
+                        <td>bitwise AND immediate</td>
+                        <td><span style="color:rgb(255, 0, 0);">andi</span> <b style="color:yellow;">Rt</b>, <b style="color:rgb(255, 102, 0);">Rs</b>, <span style="color:rgb(136, 16, 235)">immediate</span></td>
+                        <td><b style="color:yellow;">Rt</b> = <b style="color:rgb(255, 102, 0);">Rs</b> & <span style="color:rgb(136, 16, 235)">immediate</span></td>
+                        <td>I</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0011 00</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> <span style="color:rgb(136, 16, 235)">iiii iiii iiii iiii</span></td>
+                    </tr>
+                    <tr> <!-- row 7 -->
+                        <td>beq</td>
+                        <td>branch on equal</td>
+                        <td><span style="color:rgb(255, 0, 0);">beq</span> <b style="color:rgb(255, 102, 0);">Rs</b>, <b style="color:yellow;">Rt</b>, <span style="color:rgb(136, 16, 235)">offset</span></td>
+                        <td>(<b style="color:rgb(255, 102, 0);">Rs</b> == <b style="color:yellow;">Rt</b>) ? $pc + (<span style="color:rgb(136, 16, 235)">offset</span> << 2) : $pc + 4</td>
+                        <td>I</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0001 00</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> <span style="color:rgb(136, 16, 235)">iiii iiii iiii iiii</span></td>
+                    </tr>
+                    <tr> <!-- row 8 -->
+                        <td>bne</td>
+                        <td>branch on not equal</td>
+                        <td><span style="color:rgb(255, 0, 0);">bne</span> <b style="color:rgb(255, 102, 0);">Rs</b>, <b style="color:yellow;">Rt</b>, <span style="color:rgb(136, 16, 235)">offset</span></td>
+                        <td>(<b style="color:rgb(255, 102, 0);">Rs</b> != <b style="color:yellow;">Rt</b>) ? $pc + (<span style="color:rgb(136, 16, 235)">offset</span> << 2) : $pc + 4</td>
+                        <td>I</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0001 01</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> <span style="color:rgb(136, 16, 235)">iiii iiii iiii iiii</span></td>
+                    </tr>
+                    <tr> <!-- row 9 -->
+                        <td>blez</td>
+                        <td>branch on less than or equal to zero</td>
+                        <td><span style="color:rgb(255, 0, 0);">blez</span> <b style="color:rgb(255, 102, 0);">Rs</b>, <span style="color:rgb(136, 16, 235)">offset</span></td>
+                        <td>(<b style="color:rgb(255, 102, 0);">Rs</b> <= 0) ? $pc + (<span style="color:rgb(136, 16, 235)">offset</span> << 2) : $pc + 4</td>
+                        <td>I</td>
+                <td id="encoding"><span style="color:rgb(255, 0, 0);">0001 10</span><b style="color:rgb(255, 102, 0);">ss sss</b>0 0000 <span style="color:rgb(136, 16, 235)">iiii iiii iiii iiii</span></td>
+                    </tr>
+                    <tr> <!-- row 9 -->
+                        <td>bltz</td>
+                        <td>branch on less than zero</td>
+                        <td><span style="color:rgb(255, 0, 0);">bltz</span> <b style="color:rgb(255, 102, 0);">Rs</b>, <span style="color:rgb(136, 16, 235)">offset</span></td>
+                        <td>(<b style="color:rgb(255, 102, 0);">Rs</b> < 0) ? $pc + (<span style="color:rgb(136, 16, 235)">offset</span> << 2) : $pc + 4</td>
+                        <td>I</td>
+        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 01</span><b style="color:rgb(255, 102, 0);">ss sss</b>0 0000 <span style="color:rgb(136, 16, 235)">iiii iiii iiii iiii</span></td>
+                    </tr>
+                    <tr> <!-- row 9 -->
+                        <td>bltzal</td>
+                        <td>branch on less than zero and link (saves return address)</td>
+                        <td><span style="color:rgb(255, 0, 0);">bltzal</span> <b style="color:rgb(255, 102, 0);">Rs</b>, <span style="color:rgb(136, 16, 235)">offset</span></td>
+                        <td>(<b style="color:rgb(255, 102, 0);">Rs</b> < 0) ? $ra = $pc + 8; $pc + (<span style="color:rgb(136, 16, 235)">offset</span> << 2) : $pc + 4</td>
+                        <td>I</td>
+<td id="encoding"><span style="color:rgb(255, 0, 0);">0000 01</span><b style="color:rgb(255, 102, 0);">ss sss</b>1 0000 <span style="color:rgb(136, 16, 235)">iiii iiii iiii iiii</span></td>
+                    </tr>
+                    <tr> <!-- row 10 -->
+                        <td>bgez</td>
+                        <td>branch on greater than or equal to zero</td>
+                        <td><span style="color:rgb(255, 0, 0);">bgez</span> <b style="color:rgb(255, 102, 0);">Rs</b>, <span style="color:rgb(136, 16, 235)">offset</span></td>
+                        <td>(<b style="color:rgb(255, 102, 0);">Rs</b> >= 0) ? $pc + (<span style="color:rgb(136, 16, 235)">offset</span> << 2) : $pc + 4</td>
+                        <td>I</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 01</span><b style="color:rgb(255, 102, 0);">ss sss</b>0 0001 <span style="color:rgb(136, 16, 235)">iiii iiii iiii iiii</span></td>
+                    </tr>
+                    <tr> <!-- row 10 -->
+                        <td>bgtz</td>
+                        <td>branch on greater than zero</td>
+                        <td><span style="color:rgb(255, 0, 0);">bgtz</span> <b style="color:rgb(255, 102, 0);">Rs</b>, <span style="color:rgb(136, 16, 235)">offset</span></td>
+                        <td>(<b style="color:rgb(255, 102, 0);">Rs</b> > 0) ? $pc + (<span style="color:rgb(136, 16, 235)">offset</span> << 2) : $pc + 4</td>
+                        <td>I</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0001 11</span><b style="color:rgb(255, 102, 0);">ss sss</b>0 0000 <span style="color:rgb(136, 16, 235)">iiii iiii iiii iiii</span></td>
+                    </tr>
+                    <tr> <!-- row 9 -->
+                        <td>bgezal</td>
+                        <td>branch on greater than or equal to zero and link (saves return address)</td>
+                        <td><span style="color:rgb(255, 0, 0);">bgezal</span> <b style="color:rgb(255, 102, 0);">Rs</b>, <span style="color:rgb(136, 16, 235)">offset</span></td>
+                        <td>(<b style="color:rgb(255, 102, 0);">Rs</b> >= 0) ? $ra = $pc + 4; $pc + (<span style="color:rgb(136, 16, 235)">offset</span> << 2) : $pc + 4</td>
+                        <td>I</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 01</span><b style="color:rgb(255, 102, 0);">ss sss</b>1 0001 <span style="color:rgb(136, 16, 235)">iiii iiii iiii iiii</span></td>
+                    </tr>
+                    <tr> 
+                        <td>div</td>
+                        <td>divides <b style="color:rgb(255, 102, 0);">Rs</b> by Rt and stores quotient in $Lo and remainder in $Hi</td>
+                        <td><span style="color:rgb(255, 0, 0);">div</span> <b style="color:rgb(255, 102, 0);">Rs</b>, <b style="color:yellow;">Rt</b></td>
+                        <td>$Lo = <b style="color:rgb(255, 102, 0);">Rs</b> / <b style="color:yellow;">Rt</b>; $Hi = <b style="color:rgb(255, 102, 0);">Rs</b> % <b style="color:yellow;">Rt</b></td>
+                        <td>R</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 00</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> 0000 0000 00<b style="color:purple;">01 1010</b></td>
+                    </tr>
+                    <tr> 
+                        <td>divu</td>
+                        <td>divides (unsigned) <b style="color:rgb(255, 102, 0);">Rs</b> by <b style="color:yellow;">Rt</b> and stores quotient in $Lo and remainder in $Hi</td>
+                        <td><span style="color:rgb(255, 0, 0);">divu</span> <b style="color:rgb(255, 102, 0);">Rs</b>, <b style="color:yellow;">Rt</b></td>
+                        <td>$Lo = <b style="color:rgb(255, 102, 0);">Rs</b> / <b style="color:yellow;">Rt</b>; $Hi = <b style="color:rgb(255, 102, 0);">Rs</b> % <b style="color:yellow;">Rt</b></td>
+                        <td>R</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 00</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> 0000 0000 00<b style="color:purple;">01 1011</b></td>
+                    </tr>
+                    <tr> 
+                        <td>j</td>
+                        <td>jump to 26 bit absolute-address</td>
+                        <td><span style="color:rgb(255, 0, 0);">j</span> <b style="color:rgb(126, 47, 126);">absolute-addr</b></td>
+                        <td>$pc = next-$pc; next-$pc = ($pc & 0xf0000000) | (<b style="color:rgb(126, 47, 126);">absolute-addr</b> << 2);</td>
+                        <td>J</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 10</span><b style="color:rgb(126, 47, 126);">aa aaaa aaaa aaaa aaaa aaaa aaaa</b></td>
+                    </tr>
+                    <tr> 
+                        <td>jal</td>
+                        <td>jump and link (stores return address)</td>
+                        <td><span style="color:rgb(255, 0, 0);">jal</span> <b style="color:rgb(126, 47, 126);">absolute-addr</b></td>
+                        <td>$ra = $pc + 8; $pc = next-$pc; next-$pc = ($pc & 0xf0000000) | (<b style="color:rgb(126, 47, 126);">absolute-addr</b> << 2);</td>
+                        <td>J</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 11</span><b style="color:rgb(126, 47, 126);">aa aaaa aaaa aaaa aaaa aaaa aaaa</b></td>
+                    </tr>
+                    <tr> 
+                        <td>jr</td>
+                        <td>(jump register) jump to 4-byte address contained in register <b style="color:rgb(255, 102, 0);">Rs</b></td>
+                        <td><span style="color:rgb(255, 0, 0);">jr</span> <b style="color:rgb(255, 102, 0);">Rs</b></td>
+                        <td>$pc = next-$pc; next-$pc = <b style="color:rgb(255, 102, 0);">Rs</b>;</td>
+                        <td>R</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 00</span><b style="color:rgb(255, 102, 0);">ss sss</b>0 0000 0000 0000 00<b style="color:purple;">00 1000</b></td>
+                    </tr>
+                    <tr> 
+                        <td>lb</td>
+                        <td>(load byte) load one byte into target register from specified address</td>
+                        <td><span style="color:rgb(255, 0, 0);">lb</span> <b style="color:yellow;">Rt</b>, <span style="color:rgb(136, 16, 235)">offset</span>(<b style="color:rgb(255, 102, 0);">Rs</b>)</td>
+                        <td><b style="color:yellow;">Rt</b> = Memory[<b style="color:rgb(255, 102, 0);">Rs</b> + <span style="color:rgb(136, 16, 235)">offset</span>]</td>
+                        <td>I</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">1000 00</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> <span style="color:rgb(136, 16, 235)">iiii iiii iiii iiii</span></td>
+                    </tr>
+                    <tr> 
+                        <td>lui</td>
+                        <td>(load upper immediate) load 2 byte immediate value into upper 2 bytes of a register. Lower 2 bytes are zeroe'd out</td>
+                        <td><span style="color:rgb(255, 0, 0);">lui</span> <b style="color:yellow;">Rt</b>, <span style="color:rgb(136, 16, 235)">immediate</span></td>
+                        <td><b style="color:yellow;">Rt</b> = <span style="color:rgb(136, 16, 235)">immediate</span> << 16</td>
+                        <td>I</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0011 11</span>-- ---<b style="color:yellow;">t tttt</b> <span style="color:rgb(136, 16, 235)">iiii iiii iiii iiii</span></td>
+                    </tr>
+                    <tr> 
+                        <td>lw</td>
+                        <td>(load word) load 4 bytes into target register from memory</td>
+                        <td><span style="color:rgb(255, 0, 0);">lw</span> <b style="color:yellow;">Rt</b>, <span style="color:rgb(136, 16, 235)">offset</span>(<b style="color:rgb(255, 102, 0);">Rs</b>)</td>
+                        <td><b style="color:yellow;">Rt</b> = Memory[<b style="color:rgb(255, 102, 0);">Rs</b> + <span style="color:rgb(136, 16, 235)">offset</span>]</td>
+                        <td>I</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">1000 11</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> <span style="color:rgb(136, 16, 235)">iiii iiii iiii iiii</span></td>
+                    </tr>
+                    <tr> 
+                        <td>mfhi</td>
+                        <td>(move from $Hi) contents of register $Hi are moved to <b style="color:green;">destination register</b></td>
+                        <td><span style="color:rgb(255, 0, 0);">mfhi</span> <b style="color:green;">Rd</b></td>
+                        <td><b style="color:green;">Rd</b> = $Hi</td>
+                        <td>R</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 00</span>00 0000 0000 <b style="color:green;">dddd d</b>000 00<b style="color:purple;">01 0000</b></td>
+                    </tr>
+                    <tr> 
+                        <td>mflo</td>
+                        <td>(move from $Lo) contents of register $Lo are moved to <b style="color:green;">destination register</b></td>
+                        <td><span style="color:rgb(255, 0, 0);">mflo</span> <b style="color:green;">Rd</b></td>
+                        <td><b style="color:green;">Rd</b> = $Lo</td>
+                        <td>R</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 00</span>00 0000 0000 <b style="color:green;">dddd d</b>000 00<b style="color:purple;">01 0010</b></td>
+                    </tr>
+                    <tr> 
+                        <td>mult</td>
+                        <td>(multiply) multiply Rs by Rt and stores result in $Lo</td>
+                        <td><span style="color:rgb(255, 0, 0);">mult</span> <b style="color:rgb(255, 102, 0);">Rs</b>, <b style="color:yellow;">Rt</b></td>
+                        <td>$Lo = <b style="color:rgb(255, 102, 0);">Rs</b> * <b style="color:yellow;">Rt</b></td>
+                        <td>R</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 00</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> 0000 0000 00<b style="color:purple;">01 1000</b></td>
+                    </tr>
+                    <tr> 
+                        <td>multu</td>
+                        <td>(multiply unsigned) multiply Rs by Rt and stores result in $Lo</td>
+                        <td><span style="color:rgb(255, 0, 0);">multu</span> <b style="color:rgb(255, 102, 0);">Rs</b>, <b style="color:yellow;">Rt</b></td>
+                        <td>$Lo = <b style="color:rgb(255, 102, 0);">Rs</b> * <b style="color:yellow;">Rt</b></td>
+                        <td>R</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 00</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> 0000 0000 00<b style="color:purple;">01 1001</b></td>
+                    </tr>
+                    <tr> 
+                        <td>noop</td>
+                        <td style="width:1px;">no operation - CPU does nothing. Most instructions with $zero as the destination register can act as a noop.</td>
+                        <td><span style="color:rgb(255, 0, 0);">noop</span></td>
+                        <td>This particular encoding is implemented as <span style="color:rgb(255, 0, 0);">sll</span> $zero, $zero, $zero </td>
+                        <td>R</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 00</span>00 0000 0000 0000 0000 0000 0000</td>
+                    </tr>
+                    <tr> 
+                        <td>or</td>
+                        <td>bitwise OR</td>
+                        <td><span style="color:rgb(255, 0, 0);">or</span> <b style="color:green;">Rd</b>, <b style="color:yellow;">Rt</b>, <b style="color:rgb(255, 102, 0);">Rs</b></td>
+                        <td><b style="color:green;">Rd</b> = <b style="color:rgb(255, 102, 0);">Rs</b> | <b style="color:yellow;">Rt</b></td>
+                        <td>R</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 00</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> <b style="color:green;">dddd d</b><span style="color:rgb(0, 238, 255);">000 00</span><b style="color:purple;">10 0101</b></td>
+                    </tr>
+                    <tr> 
+                        <td>ori</td>
+                        <td>bitwise OR immediate</td>
+                        <td><span style="color:rgb(255, 0, 0);">ori</span> <b style="color:yellow;">Rt</b>, <b style="color:rgb(255, 102, 0);">Rs</b>, <span style="color:rgb(136, 16, 235)">immediate</span></td>
+                        <td><b style="color:yellow;">Rt</b> = <b style="color:rgb(255, 102, 0);">Rs</b> | <span style="color:rgb(136, 16, 235)">immediate</span></td>
+                        <td>I</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0011 01</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> <span style="color:rgb(136, 16, 235)">iiii iiii iiii iiii</span></td>
+                    </tr>
+                    <tr> 
+                        <td>sb</td>
+                        <td>(store byte) store least significant byte of Rt to memory</td>
+                        <td><span style="color:rgb(255, 0, 0);">sb</span> <b style="color:yellow;">Rt</b>, <span style="color:rgb(136, 16, 235)">offset</span>(<b style="color:rgb(255, 102, 0);">Rs</b>)</td>
+                        <td>Memory[<b style="color:rgb(255, 102, 0);">Rs</b> + <span style="color:rgb(136, 16, 235)">offset</span>] = (0xff & <b style="color:yellow;">Rt</b>)</td>
+                        <td>I</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">1010 00</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> <span style="color:rgb(136, 16, 235)">iiii iiii iiii iiii</span></td>
+                    </tr>
+                    <tr> 
+                        <td>sw</td>
+                        <td>(store word) store 4 bytes at a specified address</td>
+                        <td><span style="color:rgb(255, 0, 0);">sw</span> <b style="color:yellow;">Rt</b>, <span style="color:rgb(136, 16, 235)">offset</span>(<b style="color:rgb(255, 102, 0);">Rs</b>)</td>
+                        <td>Memory[<b style="color:rgb(255, 102, 0);">Rs</b> + <span style="color:rgb(136, 16, 235)">offset</span>] = <b style="color:yellow;">Rt</b></td>
+                        <td>I</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">1010 11</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> <span style="color:rgb(136, 16, 235)">iiii iiii iiii iiii</span></td>
+                    </tr>
+                    <tr> 
+                        <td>sll</td>
+                        <td>(shift left logical) shift register value left with zeroes by specified number of bits</td>
+                        <td><span style="color:rgb(255, 0, 0);">sll</span> <b style="color:green;">Rd</b>, <b style="color:yellow;">Rt</b>, <span style="color:rgb(0, 238, 255);">x</span></td>
+                        <td><b style="color:green;">Rd</b> = <b style="color:yellow;">Rt</b> << <span style="color:rgb(0, 238, 255);">x</span></td>
+                        <td>R</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 00</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> <b style="color:green;">dddd d</b><span style="color:rgb(0, 238, 255);">xxx xx</span><b style="color:purple;">00 0000</b></td>
+                    </tr>
+                    <tr> 
+                        <td>sllv</td>
+                        <td>(shift left logical variable) shift register value left with zeroes by specified number of bits in source register</td>
+                        <td><span style="color:rgb(255, 0, 0);">sllv</span> <b style="color:green;">Rd</b>, <b style="color:yellow;">Rt</b>, <b style="color:rgb(255, 102, 0);">Rs</b></td>
+                        <td><b style="color:green;">Rd</b> = <b style="color:yellow;">Rt</b> << <b style="color:rgb(255, 102, 0);">Rs</b></td>
+                        <td>R</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 00</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> <b style="color:green;">dddd d</b><span style="color:rgb(0, 238, 255);">--- --</span><b style="color:purple;">00 0100</b></td>
+                    </tr>
+                    <tr> 
+                        <td>slt</td>
+                        <td>(set on less than - signed) set destination register to 0x01 if source register is less than target register, else set <b style="color:green;">destination register</b> to 0x00.</td>
+                        <td><span style="color:rgb(255, 0, 0);">slt</span> <b style="color:green;">Rd</b>, <b style="color:rgb(255, 102, 0);">Rs</b>, <b style="color:yellow;">Rt</b></td>
+                        <td>(<b style="color:rgb(255, 102, 0);">Rs</b> < <b style="color:yellow;">Rt</b>) ? <b style="color:green;">Rd</b> = 1 : <b style="color:green;">Rd</b> = 0</td>
+                        <td>R</td>
+<td id="encoding"><span style="color:rgb(255, 0, 0);">0000 00</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> <b style="color:green;">dddd d</b><span style="color:rgb(0, 238, 255);">000 00</span><b style="color:purple;">10 1010</b></td>
+                    </tr>
+                    <tr> 
+                        <td>slti</td>
+                        <td>(set on less than immediate - signed) set target register to 0x01 if source register is less than immediate value, else set target register to 0x00.</td>
+                        <td><span style="color:rgb(255, 0, 0);">slti</span> <b style="color:yellow;">Rt</b>, <b style="color:rgb(255, 102, 0);">Rs</b>, <span style="color:rgb(136, 16, 235)">immediate</span></td>
+                        <td>(<b style="color:rgb(255, 102, 0);">Rs</b> < <span style="color:rgb(136, 16, 235)">immediate</span>) ? <b style="color:yellow;">Rt</b> = 1 : Rt = 0</td>
+                        <td>R</td>
+<td id="encoding"><span style="color:rgb(255, 0, 0);">0010 10</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> <span style="color:rgb(136, 16, 235)">iiii iiii iiii iiii</span></td>
+                    </tr>
+                    <tr> 
+                        <td>sra</td>
+                        <td>(shift right arithmetic) shift a register value right with sign bit shifted in by the specified number of bits and place the value in <b style="color:green;">destination register</b></td>
+                        <td><span style="color:rgb(255, 0, 0);">sra</span> <b style="color:green;">Rd</b>, <b style="color:yellow;">Rt</b>, <span style="color:rgb(0, 238, 255);">x</span></td>
+                        <td><b style="color:green;">Rd</b> = <b style="color:yellow;">Rt</b> >> <span style="color:rgb(0, 238, 255);">x</span></td>
+                        <td>R</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 00</span>-- ---<b style="color:yellow;">t tttt</b> <b style="color:green;">dddd d</b><span style="color:rgb(0, 238, 255);">xxx xx</span><b style="color:purple;">00 0011</b></td>
+                    </tr>
+                    <tr> 
+                        <td>srl</td>
+                        <td>(shift right logical) shift a register value right with zeroes in by the specified number of bits and place the value in <b style="color:green;">destination register</b></td>
+                        <td><span style="color:rgb(255, 0, 0);">srl</span> <b style="color:green;">Rd</b>, <b style="color:yellow;">Rt</b>, <span style="color:rgb(0, 238, 255);">x</span></td>
+                        <td><b style="color:green;">Rd</b> = <b style="color:yellow;">Rt</b> >> <span style="color:rgb(0, 238, 255);">x</span></td>
+                        <td>R</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 00</span>-- ---<b style="color:yellow;">t tttt</b> <b style="color:green;">dddd d</b><span style="color:rgb(0, 238, 255);">xxx xx</span><b style="color:purple;">00 0010</b></td>
+                    </tr>
+                    <tr> 
+                        <td>srlv</td>
+                        <td>(shift right logical variable) shift a register value right with zeroes in by the specified number of shifts in the source register and place the value in <b style="color:green;">destination register</b></td>
+                        <td><span style="color:rgb(255, 0, 0);">srlv</span> <b style="color:green;">Rd</b>, <b style="color:yellow;">Rt</b>, <b style="color:rgb(255, 102, 0);">Rs</b></td>
+                        <td><b style="color:green;">Rd</b> = <b style="color:yellow;">Rt</b> >> <b style="color:rgb(255, 102, 0);">Rs</b></td>
+                        <td>R</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 00</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> <b style="color:green;">dddd d</b><span style="color:rgb(0, 238, 255);">000 00</span><b style="color:purple;">00 0110</b></td>
+                    </tr>
+                    <tr> 
+                        <td>sub</td>
+                        <td>subtract two registers and store the result in the destination register</td>
+                        <td><span style="color:rgb(255, 0, 0);">sub</span> <b style="color:green;">Rd</b>, <b style="color:rgb(255, 102, 0);">Rs</b>, <b style="color:yellow;">Rt</b></td>
+                        <td><b style="color:green;">Rd</b> = <b style="color:rgb(255, 102, 0);">Rs</b> - <b style="color:yellow;">Rt</b></td>
+                        <td>R</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 00</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> <b style="color:green;">dddd d</b><span style="color:rgb(0, 238, 255);">000 00</span><b style="color:purple;">10 0010</b></td>
+                    </tr>
+                    <tr> 
+                        <td>syscall</td>
+                        <td>Generate a software interrupt and perform appropriate system call based on value in $v0</td>
+                        <td><span style="color:rgb(255, 0, 0);">syscall</span> 0x40404</td>
+                        <td>Operation dependant on syscall number. An example syscall is socket(2, 2, 0)</td>
+                        <td>R</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 00</span>-- ---- ---- ---- ---- --<b style="color:purple;">00 1100</b></td>
+                    </tr>
+                    <tr> 
+                        <td>xor</td>
+                        <td>bitwise exclusive OR</td>
+                        <td><span style="color:rgb(255, 0, 0);">xor</span> <b style="color:green;">Rd</b>, <b style="color:rgb(255, 102, 0);">Rs</b>, <b style="color:yellow;">Rt</b></td>
+                        <td><b style="color:green;">Rd</b> = <b style="color:rgb(255, 102, 0);">Rs</b> ^ <b style="color:yellow;">Rt</b></td>
+                        <td>R</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0000 00</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> <b style="color:green;">dddd d</b><span style="color:rgb(0, 238, 255);">--- --</span><b style="color:purple;">10 0110</b></td>
+                    </tr>
+                    <tr> 
+                        <td>xori</td>
+                        <td>bitwise exclusive OR to immediate value</td>
+                        <td><span style="color:rgb(255, 0, 0);">xori</span> <b style="color:yellow;">Rt</b>, <b style="color:rgb(255, 102, 0);">Rs</b>, <span style="color:rgb(136, 16, 235)">immediate</span></td>
+                        <td><b style="color:yellow;">Rt</b> = <b style="color:rgb(255, 102, 0);">Rs</b> ^ <span style="color:rgb(136, 16, 235)">immediate</span></td>
+                        <td>I</td>
+                        <td id="encoding"><span style="color:rgb(255, 0, 0);">0011 10</span><b style="color:rgb(255, 102, 0);">ss sss</b><b style="color:yellow;">t tttt</b> <span style="color:rgb(136, 16, 235)">iiii iiii iiii iiii</span></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h4 id="section_head">Pseudo-Instructions</h4>
+
+            <p>The MIPS instruction set is very minimal thus there are several macros, also known as, pseudo-instructions that the assembler will translate into the corresponding instructions.</p>
+            <p>When writing MIPS assembly, some assemblers support the usage of certain pseudo-instructions and will convert them to the corresponding assembly instructions.</p>
+            
+            <p>An example pseudo-instruction is move, the <b id="inline_bold">move</b> instruction in MIPS is actually achieved using the <b id="inline_bold">add</b> instruction.</p>
+<p>So <b id="inline_bold">move $s0, $s2</b> translates to => <b id="inline_bold">add $s0, $s2, $zero</b></p>
+<p>Another common pseudo-instruction often seen in disassembly is: <b id="inline_bold">la $a0, 0x7fffffff</b></p>
+<p>The <b id="inline_bold">load address (la)</b> instruction is actually represented by two MIPS instructions:</p>
+            <ol>
+                <li>lui $a0, 0x7fff - (load upper 2 bytes of address)</li>
+                <li>ori $a0, $a0, 0xffff - (load lower 2 bytes of address)</li>
+            </ol>
+            
+            <p>For more examples of pseudo-instructions, visit the link <a id="styled_link" href="https://en.wikibooks.org/wiki/MIPS_Assembly/Pseudoinstructions">here</a></p>
+      
+            <h4>Further Reading</h4>
+            <p>1. <a id="styled_link" href="http://www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html">MIPS Instruction Reference (UIdaho)</a></p>
+            <p>2. <a id="styled_link" href="https://chortle.ccsu.edu/AssemblyTutorial/index.html#part4">Programmed Introduction to MIPS Assembly Language (Central Connecticut State University)</a></p>
+            <p>3. <a id="styled_link" href="https://github.com/MIPT-ILab/mipt-mips/wiki/MIPS-pseudo-instructions">MIPT-ILAB MIPS Pseudo Instructions Git Wiki</a></p>
+            
+            <p id="next_page"><a href="./jumps-and-branches-part-6.html">Part 6: Jumps and Branches</a></p>
+            
+            
+        </div>
+        
+        <!-- javascript for sticky nav bar -->
+        <script>
+            window.onscroll = function() { scroll_sticky_nav_bar() };
+
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop;
+
+            function scroll_sticky_nav_bar() {
+              if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+              } else {
+                navbar.classList.remove("sticky");
+              }
+            }
+        </script>
+        
+    </body>
+    
+</html>

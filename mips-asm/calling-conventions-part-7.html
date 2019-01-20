@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../assets/css/main.css" title="default">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- insert javascript for mobile layout drop down -->
+        <script src="../assets/scripts/mobile_nav_bar.js"></script>
+    </head>
+    
+    <body>
+        <div class="header">
+            <h2>
+                <a id="header_title" href="../index.html">
+                    Bug Hunter's Cookbook
+                </a>
+            </h2>
+            <p>written by <a id="about_pg_link" href="#">missing</a></p>
+        </div>
+
+        <!-- sticky nav bar class -->
+        <div class="topnav" id="navbar">
+
+            <!-- desktop drop down layout is display: none on mobile screen -->
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a id="a_color" href="../mips-asm/learning-mips-assembly-part-1.html">MIPS Assembly Basics</a>
+                </button>
+                <div class="dropdown-content">
+                    <a href="../mips-asm/learning-mips-assembly-part-1.html">Part 1: Introduction to MIPS Assembly</a>
+                    <a href="../mips-asm/computer-organization-crash-course-part-2.html">Part 2: Computer Organization Crash Course</a>
+                    <a href="../mips-asm/mips-registers-part-3.html">Part 3: MIPS Registers</a>
+                    <a href="../mips-asm/the-stack-part-4.html">Part 4: The Stack</a>
+                    <a href="../mips-asm/mips-instruction-set-part-5.html">Part 5: MIPS Instruction Set</a>
+                    <a href="../mips-asm/jumps-and-branches-part-6.html">Part 6: Jumps and Branches</a>
+                    <a href="../mips-asm/calling-conventions-part-7.html">Part 7: Calling Conventions</a>
+                </div>
+            </div> 
+            
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a id="a_color" href="#">Embedded VR</a>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Getting Physical Access</a>
+                    <a href="#">Dumping the Firmware</a>
+                    <a href="#">Identifying the Attack Surface</a>
+                    <a href="#">Finding Bugs - Fuzzing</a>
+                    <a href="#">Reverse Engineering the Firmware</a>
+                    <a href="#">Finding Bugs - Static Analysis</a>
+                </div>
+            </div> 
+            
+            <div class="dropdown">
+                <button class="dropbtn"><a id="a_color" href="#">Lab Setup</a></button>
+                <div class="dropdown-content">
+                  <a href="#">Setting up and using MARS MIPS simulator</a>
+                  <a href="#">Labbing on a MIPS qemu VM</a>
+                </div>
+            </div> 
+            <!-- [D] Further Resources DESKTOP dropdown block -->
+            <div class="dropdown">
+                <button class="dropbtn"><a id="a_color" href="./resources.html">Further Resources</a></button>
+                <div class="dropdown-content">
+                  <a href="http://www.devttys0.com/">devttys0</a>
+                  <a href="https://www.amazon.com/Second-Morgan-Kaufmann-Computer-Architecture/dp/0120884216">See MIPS Run</a>
+                  <a href="https://azeria-labs.com/">Azeria Labs</a>
+                </div>
+            </div> 
+            
+            <!-- mobile drop down layout is display: none on desktop -->
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown1')">
+                    MIPS Assembly Basics
+                </button>
+                <div id="mdropdown1">
+                    <a href="../mips-asm/learning-mips-assembly-part-1.html">Part 1: Introduction to MIPS Assembly</a>
+                    <a href="../mips-asm/computer-organization-crash-course-part-2.html">Part 2: Computer Organization Crash Course</a>
+                    <a href="../mips-asm/mips-registers-part-3.html">Part 3: MIPS Registers</a>
+                    <a href="../mips-asm/the-stack-part-4.html">Part 4: The Stack</a>
+                    <a href="../mips-asm/mips-instruction-set-part-5.html">Part 5: MIPS Instruction Set</a>
+                    <a href="../mips-asm/jumps-and-branches-part-6.html">Part 6: Jumps and Branches</a>
+                    <a href="../mips-asm/calling-conventions-part-7.html">Part 7: Calling Conventions</a>
+                </div>
+            </div>
+            
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown2')">
+                    Embedded VR
+                </button>
+                <div id="mdropdown2">
+                    <a href="#">Getting Physical Access</a>
+                    <a href="#">Dumping the Firmware</a>
+                    <a href="#">Identifying the Attack Surface</a>
+                    <a href="#">Finding Bugs - Fuzzing</a>
+                    <a href="#">Reverse Engineering the Firmware</a>
+                    <a href="#">Finding Bugs - Static Analysis</a>
+                </div>
+            </div>
+            
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown3')">
+                    Lab Setup
+                </button>
+                <div id="mdropdown3">
+                    <a href="#">Setting up and using MARS MIPS simulator</a>
+                    <a href="#">Labbing on a MIPS qemu VM</a>
+                </div>
+            </div>
+            <!-- [M] Further Resources MOBILE dropdown block -->
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown4')">
+                    Further Resources
+                </button>
+                <div id="mdropdown4">
+                    <a href="http://www.devttys0.com/">devttys0</a>
+                    <a href="https://www.amazon.com/Second-Morgan-Kaufmann-Computer-Architecture/dp/0120884216">See MIPS Run</a>
+                    <a href="https://azeria-labs.com/">Azeria Labs</a>
+                </div>
+            </div>
+                
+            <!-- button for accessing mobile drop down layout activated on small screen size -->
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="access_mobile_nav_bar()">&#9776;</a>
+
+        <!-- end of navbar -->
+        </div>
+
+        <div class="content">
+            <h3 id="section_head">Part 7: Calling Conventions</h3>
+            <p>A function is a section of a program that performs a specific task. In order to call a function, and depending on the type of function, specific conditions should be met. These standards are defined as calling conventions.</p>
+            
+            <p>As an analogy, there are different jobs in our society and a baker might get ready in the morning differently than a teacher gets ready in the morning.</p>
+                        
+            <!-- <p align="center"><img src="#"></p> -->
+            
+            <p>Using the code example below, we will discuss the different calling conventions of:</p>
+            <ul>
+                <li>Stem and Leaf Function calls</li>
+                <li>Library calls</li>
+                <li>System calls</li>
+            </ul>
+            <pre id="inline_code">
+            #include &lt;stdio.h&gt;
+
+            int multiply(int a, int b) {
+                return a * b;
+            }
+            
+            int moreThanFour(int a, int b, int c, int d, int e, int f) {
+                printf("%d %d %d %d %d %d\n", a, b, c, d, e, f);
+                return 0;
+            }
+
+            int main() {
+                int x = multiply(5, 4);
+                moreThanFour(1, 2, 3, 4, 5, 6);
+                printf("This is a library call to printf, x = %d\n", x);
+                write(1, "This is a syscall to write\n", 27);
+                return 0;
+            }
+            </pre>
+            
+            <h4 id="section_head">Function Calls</h4>
+            <p>Functions that you write in your code will abide by the regular function calling convention.</p>
+            <p>This involves passing the first four arguments through the registers $a0-$a3 and saving the return address in register $ra.</p>
+            <p>A function that calls other functions is a <b id="inline_bold">stem</b> function whereas a function that does not call any functions is a <b id="inline_bold">leaf</b> function.</p>
+            <p>Stem functions save $ra onto the stack to preserve it before calling another function and using the register whereas leaf functions can just use the register.</p>
+            <p>Similarly, there are several other registers that are preserved across function calls. They are the <b id="inline_bold">saved</b> registers $s0-$s8. Across function calls, they are saved onto the stack before the next function call.</p>
+            <p>In the event that more than four arguments are passed to a function, all arguments after the fourth are stored onto the stack.</p>
+            <p>This can be seen in the MIPS assembly below</p>
+            <pre id="inline_code">
+             // Equivalent C code: moreThanFour(1, 2, 3, 4, 5, 6);
+             
+             960:   24020006        li      v0,6
+             964:   afa20014        sw      v0,20(sp)    # argument 6 is stored on the stack
+             968:   24020005        li      v0,5
+             96c:   afa20010        sw      v0,16(sp)    # argument 5 is stored on the stack
+             970:   24070004        li      a3,4         # arguments 1-4 are stored in $a0-$a3
+             974:   24060003        li      a2,3
+             978:   24050002        li      a1,2
+             97c:   24040001        li      a0,1
+             980:   8f828038        lw      v0,-32712(gp)
+             984:   0040c825        move    t9,v0
+             988:   0411ffc2        bal     894 &lt;moreThanFour&gt;    # bal will save the address 990 in $ra
+             98c:   00000000        nop                           # branch delay slot
+             <b id="inline_bold">990</b>:   8fdc0018        lw      gp,24(s8)    # after moreThanFour() finishes, code will return here
+            </pre>
+        
+            <h4 id="section_head">Library Calls</h4>
+            <p>Functions from C standard libraries such as printf() are compiled to follow the convention of loading the address of the library function into register $t9 and then jumping to $t9.</p>
+            <p>This is important because $t9 will be used to offset other things in the library code.</p>
+            <p>Generally when writing C code, we don't have to worry about this as the compiler takes care of this for us; however, if you are writing MIPS assembly and want to call a library function, make sure to load the library function's address into $t9.</p>
+            <p>All of the previous aspects of a function call as described above apply - passing arguments to $a0-$a3 and saving $ra.</p>
+            <p>This can be seen in the MIPS assembly below</p>
+            <pre id="inline_code">
+             // Equivalent C code: printf("This is a library call to printf, x = %d\n", x);
+             
+             994:   8fc50020        lw      a1,32(s8)       # argument 1 is x
+             998:   8f828030        lw      v0,-32720(gp)
+             99c:   24440b44        addiu   a0,v0,2884      # argument 0 is the string "This is a library call to printf, x = %d\n"
+             9a0:   8f828068        lw      v0,-32664(gp)
+             9a4:   0040c825        move    t9,v0           # load address of printf into $t9
+             9a8:   0320f809        <b id="inline_bold">jalr    t9</b>              # jump to $t9
+             9ac:   00000000        nop
+            </pre>
+            
+            <h4 id="section_head">System Calls</h4>
+            <p>System calls or <b id="inline_bold">syscalls</b> are special functions used to directly communicate with the operating system. During a system call, control is passed to the operating system to perform the syscall before communicating back to the user via the return value.</p>
+            <p>Many standard library functions are wrappers for syscalls, for example printf() utilizes the write() syscall to output to standard out.</p>
+            <p>A short list of possible system call functions is:</p>
+            <ul>
+                <li>write()</li>
+                <li>read()</li>
+                <li>socket()</li>
+            </ul>
+            <p>To perform a syscall, the syscall code (number) is specified in the register $v0 and arguments are passed in registers $a0-$a3.</p>
+            <p>Then the syscall instruction is performed.</p>
+            <pre id="inline_code">
+             li $v0, <b id="inline_bold">syscall_number</b>
+             syscall 0x404040</pre>
+            <p>Syscall codes can be found in <code style="font-size:20px; color:rgb(33, 239, 247);">/usr/include/mips-linux-gnu/asm/unistd.h</code> or at <a id="styled_link" href="https://w3challs.com/syscalls/?arch=mips_o32">w3challs</a> </p>
+                       
+            <h4>Further Reading</h4>
+            <p>1. <a id="styled_link" href="https://en.wikibooks.org/wiki/MIPS_Assembly/Subroutines">MIPS Assembly Wikibook Subroutines</a></p>
+            <p>2. <a id="styled_link" href="http://phrack.org/issues/56/15.html">Phrack - Writing MIPS Shellcode</a></p>
+            
+            <p id="next_page"><a href="../404.html">Time to practice! MIPS Lab Setup</a></p>    
+        </div>
+        
+        <!-- javascript for sticky nav bar -->
+        <script>
+            window.onscroll = function() { scroll_sticky_nav_bar() };
+
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop;
+
+            function scroll_sticky_nav_bar() {
+              if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+              } else {
+                navbar.classList.remove("sticky");
+              }
+            }
+        </script>
+        
+    </body>
+    
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../assets/css/main.css" title="default">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- insert javascript for mobile layout drop down -->
+        <script src="../assets/scripts/mobile_nav_bar.js"></script>
+    </head>
+    
+    <body>
+        <div class="header">
+            <h2>
+                <a id="header_title" href="../index.html">
+                    Bug Hunter's Cookbook
+                </a>
+            </h2>
+            <p>written by <a id="about_pg_link" href="#">missing</a></p>
+        </div>
+
+        <!-- sticky nav bar class -->
+        <div class="topnav" id="navbar">
+
+            <!-- desktop drop down layout is display: none on mobile screen -->
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a id="a_color" href="../mips-asm/learning-mips-assembly-part-1.html">MIPS Assembly Basics</a>
+                </button>
+                <div class="dropdown-content">
+                    <a href="../mips-asm/learning-mips-assembly-part-1.html">Part 1: Introduction to MIPS Assembly</a>
+                    <a href="../mips-asm/computer-organization-crash-course-part-2.html">Part 2: Computer Organization Crash Course</a>
+                    <a href="../mips-asm/mips-registers-part-3.html">Part 3: MIPS Registers</a>
+                    <a href="../mips-asm/the-stack-part-4.html">Part 4: The Stack</a>
+                    <a href="../mips-asm/mips-instruction-set-part-5.html">Part 5: MIPS Instruction Set</a>
+                    <a href="../mips-asm/jumps-and-branches-part-6.html">Part 6: Jumps and Branches</a>
+                    <a href="../mips-asm/calling-conventions-part-7.html">Part 7: Calling Conventions</a>
+                </div>
+            </div> 
+            
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a id="a_color" href="#">Embedded VR</a>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Getting Physical Access</a>
+                    <a href="#">Dumping the Firmware</a>
+                    <a href="#">Identifying the Attack Surface</a>
+                    <a href="#">Finding Bugs - Fuzzing</a>
+                    <a href="#">Reverse Engineering the Firmware</a>
+                    <a href="#">Finding Bugs - Static Analysis</a>
+                </div>
+            </div> 
+            
+            <div class="dropdown">
+                <button class="dropbtn"><a id="a_color" href="#">Lab Setup</a></button>
+                <div class="dropdown-content">
+                  <a href="#">Setting up and using MARS MIPS simulator</a>
+                  <a href="#">Labbing on a MIPS qemu VM</a>
+                </div>
+            </div> 
+            <!-- [D] Further Resources DESKTOP dropdown block -->
+            <div class="dropdown">
+                <button class="dropbtn"><a id="a_color" href="./resources.html">Further Resources</a></button>
+                <div class="dropdown-content">
+                  <a href="http://www.devttys0.com/">devttys0</a>
+                  <a href="https://www.amazon.com/Second-Morgan-Kaufmann-Computer-Architecture/dp/0120884216">See MIPS Run</a>
+                  <a href="https://azeria-labs.com/">Azeria Labs</a>
+                </div>
+            </div> 
+            
+            <!-- mobile drop down layout is display: none on desktop -->
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown1')">
+                    MIPS Assembly Basics
+                </button>
+                <div id="mdropdown1">
+                    <a href="../mips-asm/learning-mips-assembly-part-1.html">Part 1: Introduction to MIPS Assembly</a>
+                    <a href="../mips-asm/computer-organization-crash-course-part-2.html">Part 2: Computer Organization Crash Course</a>
+                    <a href="../mips-asm/mips-registers-part-3.html">Part 3: MIPS Registers</a>
+                    <a href="../mips-asm/the-stack-part-4.html">Part 4: The Stack</a>
+                    <a href="../mips-asm/mips-instruction-set-part-5.html">Part 5: MIPS Instruction Set</a>
+                    <a href="../mips-asm/jumps-and-branches-part-6.html">Part 6: Jumps and Branches</a>
+                    <a href="../mips-asm/calling-conventions-part-7.html">Part 7: Calling Conventions</a>
+                </div>
+            </div>
+            
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown2')">
+                    Embedded VR
+                </button>
+                <div id="mdropdown2">
+                    <a href="#">Getting Physical Access</a>
+                    <a href="#">Dumping the Firmware</a>
+                    <a href="#">Identifying the Attack Surface</a>
+                    <a href="#">Finding Bugs - Fuzzing</a>
+                    <a href="#">Reverse Engineering the Firmware</a>
+                    <a href="#">Finding Bugs - Static Analysis</a>
+                </div>
+            </div>
+            
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown3')">
+                    Lab Setup
+                </button>
+                <div id="mdropdown3">
+                    <a href="#">Setting up and using MARS MIPS simulator</a>
+                    <a href="#">Labbing on a MIPS qemu VM</a>
+                </div>
+            </div>
+            <!-- [M] Further Resources MOBILE dropdown block -->
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown4')">
+                    Further Resources
+                </button>
+                <div id="mdropdown4">
+                    <a href="http://www.devttys0.com/">devttys0</a>
+                    <a href="https://www.amazon.com/Second-Morgan-Kaufmann-Computer-Architecture/dp/0120884216">See MIPS Run</a>
+                    <a href="https://azeria-labs.com/">Azeria Labs</a>
+                </div>
+            </div>
+                
+            <!-- button for accessing mobile drop down layout activated on small screen size -->
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="access_mobile_nav_bar()">&#9776;</a>
+
+        <!-- end of navbar -->
+        </div>
+
+        <div class="content">
+            <h3 id="section_head">Part 2: Computer Organization Crash Course</h3>
+            
+            <p>These concepts are not limited to MIPS, but I think they are wholly important while learning MIPS assembly. Instructions act on data, but what are the types of data that we can interact with?</p>
+            
+            <h4 id="section_head">Data Representation</h4>
+            <p>First is a bit - a bit is a single digit that can have the value of 1 or 0. Grouping together more bits means that more values can be represented.</p>
+            
+            <p>If we have 3 bits (each with the possibility of representing 1, or 0), then 8 values can be represented because 2 x 2 x 2 = 2<sup>3</sup> = 8.</p>
+            <p>These binary values would be:</p>
+            <p>000 001 010 011 100 101 110 111</p>
+            <p>Then, deciding on what the groups of binary values represent is up to the <b id="inline_bold">context</b> of the situation. Context refers to how the data is interpreted. Is the data representing ascii or is it a signed or unsigned integer value, or is it a floating point number?</p>
+            <p>It is important to note that the same binary value can represent multiple different things depending on the context.</p>
+            <p>For example, take the binary value 110</p>
+            <p>If the number is seen as <a id="styled_link" href="http://www.cs.uwm.edu/classes/cs315/Bacon/Lecture/HTML/ch04s10.html">unsigned</a> (representing the range of numbers 0 through 2<sup>3</sup> - 1 because we have 3 bits), then the binary value 110 is interpreted as the decimal number 6, which is positive.</p>
+            <p>If the number is seen as <a id="styled_link" href="http://www.cs.uwm.edu/classes/cs315/Bacon/Lecture/HTML/ch04s13.html">signed</a> (representing the range of numbers -(2<sup>2</sup>) to 2<sup>2</sup> - 1), then the binary value 110 is interpreted as the decimal number -3, which is negative.</p>
+            
+            <p>By convention, 8 bits make up a byte. Instructions that have a suffix character 'b' likely operate on a byte such as lb for load byte.</p>
+
+            <p>Moving on-- 2 bytes make up a half-word and 4 bytes make up a word. In MIPS, the corresponding instructions for loading these sized-values are lh and lw for load half-word and load word respectively.</p>
+            
+            <div style="display: block; margin-bottom: 50px;overflow-x: auto;">
+                <table>
+                    <tr>
+                        <th>Number of bits:</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+                        <th>10</th>
+                        <th>11</th>
+                        <th>12</th>
+                        <th>13</th>
+                        <th>14</th>
+                        <th>15</th>
+                        <th>16</th>
+                        <th>17</th>
+                        <th>18</th>
+                        <th>19</th>
+                        <th>20</th>
+                        <th>21</th>
+                        <th>22</th>
+                        <th>23</th>
+                        <th>24</th>
+                        <th>25</th>
+                        <th>26</th>
+                        <th>27</th>
+                        <th>28</th>
+                        <th>29</th>
+                        <th>30</th>
+                        <th>31</th>
+                        <th>32</th>
+                    </tr>
+                    <tr> <!-- row 1 -->
+                        <td>1 Byte</td>
+                        <td>|=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=|</td>
+                    </tr>
+                    <tr> <!-- row 2 -->
+                        <td>2 Bytes (half-word)</td>
+                        <td>|=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=|</td>
+                    </tr>
+                    <tr>
+                        <td>4 Bytes (word)</td>
+                        <td>|=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=</td>
+                        <td>=|</td>
+                    </tr>
+                </table>
+            </div>
+
+            <br>
+            <pre id="inline_code">
+            lb - load byte
+            lh - load half-word
+            lw - load word</pre>     
+
+            <h4 id="section_head">Hexadecimal (base 16)</h4>
+            
+            <p>Values can be converted from binary representation (base 2) to hexadecimal (base 16) and decimal (base 10) for greater ease of comprehending the values.</p>
+                    
+            <p>Hexadecimal or base 16 is a number system. Often, the numbers are represented with the prefix 0x, so a hex number looks like 0x{number}. Counting in hex begins similarly to decimal, (0x0, 0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9); however, because it is base 16 and not base 10, counting continues in single digits which are represented by letters A through F. So when you continue to count from 9, it will be 0xA, 0xB, 0xC, 0xD, 0xE, 0xF. The number after 0xF will have a carry-over and will be 0x10. In decimal, this number is 16.</p>
+            
+            <p>To make better sense of this, we typically have five fingers on each hand (for a grand total of ten fingers), so we count up to 10 in decimal before we need to carry over onto a third hand. But if we had eight fingers on each hand (for a grand total of sixteen fingers), we would count up to 0x10 in hex.</p>
+            
+            <p align="center"><img src="../assets/images/eight_fingers.png"></p>
+            
+            <p>Hex is useful in computers because one byte is represented by two hex digits.</p>
+            
+            <p>In ascii, the hex value <b id="inline_bold">0x41</b> represents the uppercase character <b id="inline_bold">A</b>. You can verify this in the Unix / Linux command line with the command: <code style="font-size:20px; color:rgb(33, 239, 247);">man ascii</code></p>
+            
+            <h4 id="section_head">Endianness</h4>
+            <p>MIPS can be set to operate on either little or big endianness depending on whether the BE bit in the Config register is set (1 for big-endian, 0 for little-endian).</p>
+            <p>Endianness describes the order in which bytes of data are loaded into registers and memory.</p>
+            <p>For example, if the letters A, B, C, and D are in an ordered list from left-to-right.</p>
+            <p>The big-end (most significant bit) would be A while the little-end (least significant bit) would be D.</p>
+            <p>Now say you write the list mentioned above onto a piece of paper.</p>
+            <p>In big-endian order you would write A, B, C, D. In little-endian order you would write D, C, B, A</p>
+            <p>Wikipedia has a really great <a id="styled_link" href="https://en.wikipedia.org/wiki/Endianness">illustration</a></p>
+                        
+            <h4 id="section_head">Memory</h4>
+            <p>Disregarding how memory is implemented in hardware, memory abstractly can be thought of as the location of running programs. Every byte of memory is assigned a memory address, which is also a sequence of 1's and 0's. For convenience, we will write 32-bit memory addresses in hex. In MIPS, a memory address is a 4-byte value such as <b id="inline_bold">0x7fffffff</b>.</p>
+            
+            <p>Imagine a layout of a room where there are a bunch of boxes covering the floor. On the floor, there is an address associated to the position of each box. Inside of each box are eight light bulbs (eight bits), some of the lights are on whereas others are off. In this analogy, each box represents a byte that has a corresponding four byte memory address assigned to it.</p>
+            
+            <p align="center"><img src="../assets/images/mem_boxes.png"></p>
+            
+            <p>It's not a perfect analogy, especially in regards to virtual memory and address translation but we won't think about that for now. You can read more about that <a id="styled_link" href="http://williams.comp.ncat.edu/addrtrans.htm">here</a></p>
+            
+            <h4 id="section_head">Pointers</h4>
+            <p>In the programming language C, pointers are variables whose value is a memory address. They are useful for operating on data outside of a function's local scope and generally for working more closely with memory.</p>
+                        
+            <p>Imagine every variable is a square that has an associated memory address.</p> 
+            
+            <p>The drawing below is to be observed with the following rules:</p>
+            
+            <ul>
+                <li>The <b id="inline_bold">name</b> of the variable is <b id="inline_bold">above</b> the square</li>
+                <li>The <b id="inline_bold">value</b> of the variable is <b id="inline_bold">inside</b> of the square</li>
+                <li>The <b id="inline_bold">memory address</b> is <b id="inline_bold">below</b> the square</li>
+            </ul>
+            
+            <p align="center"><img src="../assets/images/ptrs.png"></p>
+            
+            <p>So in the drawing above, the variable named x has a value of 4 and a memory address of 0xbffdfa4c.</p>
+            
+            <p>When we look at ptr, the value of the pointer contains the memory address of the variable x.</p>
+            
+            <p>Multiple operations can be performed on the pointer. We can get the immediate value, we can get its own memory address, and we can dereference it. Dereferencing a pointer can be visualized by jumping to the variable a pointer is pointing to and grabbing the value where it lands.</p>
+            
+            <p>The below C code demonstrates the different operations that can be performed with a pointer and show the relationship of a variable's value and memory address.</p>
+            
+            <pre id="inline_code">
+    #include &ltstdio.h&gt
+
+    void main() {
+        int x = 4;
+        int *ptr = &x;
+        // addresses will likely be different when you compile on another computer
+        // just as in our visual above, we can see that the code will print
+        printf("%d\n", x);    // 4 - value of x is 4
+        printf("%p\n", &x);   // 0xbffdfa4c - address of x
+        printf("%p\n", ptr);  // 0xbffdfa4c - value of ptr is the address of x, so should be the same as above
+        printf("%p\n", &ptr); // 0xbffdfa48 - address of ptr
+        printf("%d\n", *ptr); // 4 - value of x (ptr dereferenced)
+    }</pre>
+      
+            <h4>Further Reading</h4>
+            <p>1. <a id="styled_link" href="https://www.geeksforgeeks.org/computer-organization-and-architecture-tutorials/">Geeks for Geeks Computer Organization Tutorials</a></p>
+            <p>2. <a id="styled_link" href="https://www.amazon.com/Book-Programming-4th-Al-Kelley/dp/0201183994">A Book on C</a></p>
+            
+            <p id="next_page"><a href="../mips-asm/mips-registers-part-3.html">Part 3: MIPS Registers</a></p>    
+        </div>
+        
+        <!-- javascript for sticky nav bar -->
+        <script>
+            window.onscroll = function() { scroll_sticky_nav_bar() };
+
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop;
+
+            function scroll_sticky_nav_bar() {
+              if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+              } else {
+                navbar.classList.remove("sticky");
+              }
+            }
+        </script>
+        
+    </body>
+    
+</html>

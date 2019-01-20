@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../assets/css/main.css" title="default">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- insert javascript for mobile layout drop down -->
+        <script src="../assets/scripts/mobile_nav_bar.js"></script>
+    </head>
+    
+    <body>
+        <div class="header">
+            <h2>
+                <a id="header_title" href="../index.html">
+                    Bug Hunter's Cookbook
+                </a>
+            </h2>
+            <p>written by <a id="about_pg_link" href="#">missing</a></p>
+        </div>
+
+        <!-- sticky nav bar class -->
+        <div class="topnav" id="navbar">
+
+            <!-- desktop drop down layout is display: none on mobile screen -->
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a id="a_color" href="../mips-asm/learning-mips-assembly-part-1.html">MIPS Assembly Basics</a>
+                </button>
+                <div class="dropdown-content">
+                    <a href="../mips-asm/learning-mips-assembly-part-1.html">Part 1: Introduction to MIPS Assembly</a>
+                    <a href="../mips-asm/computer-organization-crash-course-part-2.html">Part 2: Computer Organization Crash Course</a>
+                    <a href="../mips-asm/mips-registers-part-3.html">Part 3: MIPS Registers</a>
+                    <a href="../mips-asm/the-stack-part-4.html">Part 4: The Stack</a>
+                    <a href="../mips-asm/mips-instruction-set-part-5.html">Part 5: MIPS Instruction Set</a>
+                    <a href="../mips-asm/jumps-and-branches-part-6.html">Part 6: Jumps and Branches</a>
+                    <a href="../mips-asm/calling-conventions-part-7.html">Part 7: Calling Conventions</a>
+                </div>
+            </div> 
+            
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a id="a_color" href="#">Embedded VR</a>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Getting Physical Access</a>
+                    <a href="#">Dumping the Firmware</a>
+                    <a href="#">Identifying the Attack Surface</a>
+                    <a href="#">Finding Bugs - Fuzzing</a>
+                    <a href="#">Reverse Engineering the Firmware</a>
+                    <a href="#">Finding Bugs - Static Analysis</a>
+                </div>
+            </div> 
+            
+            <div class="dropdown">
+                <button class="dropbtn"><a id="a_color" href="#">Lab Setup</a></button>
+                <div class="dropdown-content">
+                  <a href="#">Setting up and using MARS MIPS simulator</a>
+                  <a href="#">Labbing on a MIPS qemu VM</a>
+                </div>
+            </div> 
+            <!-- [D] Further Resources DESKTOP dropdown block -->
+            <div class="dropdown">
+                <button class="dropbtn"><a id="a_color" href="./resources.html">Further Resources</a></button>
+                <div class="dropdown-content">
+                  <a href="http://www.devttys0.com/">devttys0</a>
+                  <a href="https://www.amazon.com/Second-Morgan-Kaufmann-Computer-Architecture/dp/0120884216">See MIPS Run</a>
+                  <a href="https://azeria-labs.com/">Azeria Labs</a>
+                </div>
+            </div> 
+            
+            <!-- mobile drop down layout is display: none on desktop -->
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown1')">
+                    MIPS Assembly Basics
+                </button>
+                <div id="mdropdown1">
+                    <a href="../mips-asm/learning-mips-assembly-part-1.html">Part 1: Introduction to MIPS Assembly</a>
+                    <a href="../mips-asm/computer-organization-crash-course-part-2.html">Part 2: Computer Organization Crash Course</a>
+                    <a href="../mips-asm/mips-registers-part-3.html">Part 3: MIPS Registers</a>
+                    <a href="../mips-asm/the-stack-part-4.html">Part 4: The Stack</a>
+                    <a href="../mips-asm/mips-instruction-set-part-5.html">Part 5: MIPS Instruction Set</a>
+                    <a href="../mips-asm/jumps-and-branches-part-6.html">Part 6: Jumps and Branches</a>
+                    <a href="../mips-asm/calling-conventions-part-7.html">Part 7: Calling Conventions</a>
+                </div>
+            </div>
+            
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown2')">
+                    Embedded VR
+                </button>
+                <div id="mdropdown2">
+                    <a href="#">Getting Physical Access</a>
+                    <a href="#">Dumping the Firmware</a>
+                    <a href="#">Identifying the Attack Surface</a>
+                    <a href="#">Finding Bugs - Fuzzing</a>
+                    <a href="#">Reverse Engineering the Firmware</a>
+                    <a href="#">Finding Bugs - Static Analysis</a>
+                </div>
+            </div>
+            
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown3')">
+                    Lab Setup
+                </button>
+                <div id="mdropdown3">
+                    <a href="#">Setting up and using MARS MIPS simulator</a>
+                    <a href="#">Labbing on a MIPS qemu VM</a>
+                </div>
+            </div>
+            <!-- [M] Further Resources MOBILE dropdown block -->
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown4')">
+                    Further Resources
+                </button>
+                <div id="mdropdown4">
+                    <a href="http://www.devttys0.com/">devttys0</a>
+                    <a href="https://www.amazon.com/Second-Morgan-Kaufmann-Computer-Architecture/dp/0120884216">See MIPS Run</a>
+                    <a href="https://azeria-labs.com/">Azeria Labs</a>
+                </div>
+            </div>
+                
+            <!-- button for accessing mobile drop down layout activated on small screen size -->
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="access_mobile_nav_bar()">&#9776;</a>
+
+        <!-- end of navbar -->
+        </div>
+
+        <div class="content">
+            <h3 id="section_head">Part 4: The Stack</h3>
+            
+            <p>The concept of the stack is not just limited to MIPS, but it is important while learning MIPS assembly to understand where automatic variables are stored and for learning calling conventions.</p>
+            
+            <h4 id="section_head">What is the stack? (logical)</h4>
+            <p>Conceptually, the stack refers to a method of organizing and storing data where elements stored most recently are accessed first. This is also called <b id="inline_bold">Last-in-First-out (LIFO)</b>.</p>
+            
+            <p>As an analogy, imagine a stack of plates. The easiest plate to grab without another plate breaking is directly from the top.</p>
+            
+            <p>Data elements are pushed onto the stack and popped off of the stack.</p>
+            
+            <p>For example, if we were to push elements in the order A, B, C, D. </p>
+                    
+            <p align="center"><img src="../assets/images/push_logical_stack.gif"></p>
+            
+            <p>The stack would look like: </p>
+
+            <!-- table used to visualize logical stack -->
+            <div style="display: block; margin-bottom: 50px;overflow-x: auto;">
+                <table align="center">
+                    <tr>
+                        <th>Top of Stack</th>
+                    </tr>
+                    <tr>
+                        <td align="center">D</td>
+                    </tr>
+                    <tr>
+                        <td align="center">C</td>
+                    </tr>
+                    <tr>
+                        <td align="center">B</td>
+                    </tr>
+                    <tr>
+                        <td align="center">A</td>
+                    </tr>
+                    <tr>
+                        <td align="center">Bottom of Stack</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <p>Then when we would pop elements off of the stack, they would pop in the order D, C, B, and A:</p>
+            
+            <p align="center"><img src="../assets/images/pop_logical_stack.gif"></p>
+            
+            <h4 id="section_head">What is the stack? (memory)</h4>
+            
+            <p>In program memory, there is a section of memory reserved also called the stack. At a glance it operates just like the logical stack we have just mentioned with some implementation nuances.</p>
+            
+            <p>In MIPS-32, the stack is aligned by 4 bytes and each byte has an associated 4-byte memory address. The $sp register which stands for stack-pointer, stores a stack address, typically the top of the stack. </p>
+            
+            <p>Importantly, the stack grows from high to low memory. This means when we subtract the stack pointer, we are actually moving up on the stack. When we add to the stack pointer, we are moving down the stack.</p>
+            
+            <p>This effect can be seen by the visualization below: </p>
+            
+            <p align="center"><img src="../assets/images/stack_visual_doodle.png"></p>
+            
+            <p>In x86, push and pop are instructions used to operate on the memory stack; however, MIPS does not have the push or pop instructions.</p>
+            
+            <p>In MIPS, push and pop can be achieved in two instructions by loading values to a stack memory location and modifying the stack pointer.</p>
+            
+            <p>An example of two instructions equivalent to a <b id="inline_bold">push 100</b> might be:</p>
+            
+            <ol style="text-align:center; list-style-position: inside;">
+                <li>lui ($sp), 100</li>
+                <li>sub $sp, $sp, 4</li>
+            </ol>
+            
+            <p>After all of this mention of push and pop, this is not to say that stack elements cannot be accessed directly. Often stack elements are accessed by an offset from the current stack pointer.</p>
+            
+            <h4 id="section_head">What is the stack used for? (memory)</h4>
+            <p>The stack is used to store data within a stack frame (local variables). Every function call of a program has its own stack frame. When a new function is called, the old function must save its associated stack frame and return address before executing the new function. Thus, this information is also stored on the stack.</p> 
+            
+            <p>As an analogy, imagine a construction worker who follows a set of tasks written on a board. He goes somewhere to complete the work, then he looks for a red line on the ground to return to the board to check it for the next task.</p>
+            
+            <p align="center"><img src="../assets/images/construction_worker_analogy.png"></p>
+            
+            <p>This will be discussed further in <a id="styled_link" href="./calling-conventions-part-7.html">Part 7: Calling Conventions</a></p>
+            
+            <p>In the below code, when we call our function multiply(), main will save its own stack frame and return address so as when the function multiply() returns, then code execution will continue in main.</p>
+            
+            <pre id="inline_code">
+    int multiply(int a, int b) {
+        return a * b;
+    }
+
+    void main() {
+        // save stack frame and return address before calling multiply()
+        int x = multiply(5, 4);
+        // ... more code would continue here after multiply()
+    }
+            </pre>
+            
+            <p align="center"><img src="../assets/images/stack_frame.png"></p>
+              
+            <p id="next_page"><a href="../mips-asm/mips-instruction-set-part-5.html">Part 5: MIPS Instruction Set</a></p>    
+        </div>
+        
+        <!-- javascript for sticky nav bar -->
+        <script>
+            window.onscroll = function() { scroll_sticky_nav_bar() };
+
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop;
+
+            function scroll_sticky_nav_bar() {
+              if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+              } else {
+                navbar.classList.remove("sticky");
+              }
+            }
+        </script>
+        
+    </body>
+    
+</html>

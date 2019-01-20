@@ -1,0 +1,284 @@
+/* css for sticky navbar - begin */
+body {
+    margin: 0;
+    font-size: 28px;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'chalk';
+}
+
+.header {
+    /* background-color: #f1f1f1; */
+    padding: 30px;
+    text-align: center;
+    background-color: rgb(0, 2, 0);
+    background-image: url("../images/banner.png");
+    background-repeat: no-repeat;
+    font-family: 'chalk';
+    color:rgb(128, 128, 128);
+}
+
+#navbar {
+  /* overflow: hidden; commented out for conflict with dropdown menu */
+    background-color: rgb(25, 27, 31);
+    height: 60px;
+}
+
+/* mobile drop down icon '=' invisible on desktop screen size */
+.topnav a.icon {
+    display: none;
+}
+
+.content {
+    padding: 20px;
+    z-index: 0;  /* small css trick to send content to back when mobile dropdown activated - this breaks a href links in content if z-index not set on .sticky */
+    position: relative;
+    font-family: 'lilguy';
+    /* line-height: 50px; */
+    font-size: 40px;
+    color:rgb(128, 128, 128);  /* gray text color */
+    background-color: rgb(0, 2, 0);  /* black background */
+    /* 
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px; */
+}
+
+#header_title {
+    text-decoration: none;
+    color: rgb(8, 255, 41);
+}
+
+#about_pg_link {
+    text-decoration: none;
+    color: #3391ff;
+}
+
+/* styling for id=section_head <h3> tags */
+#section_head {
+    text-align: center;
+    color: rgb(255, 34, 163);
+    font-family: 'chalk';
+}
+
+/* styling for id=styled_link <a> tags */
+#styled_link {
+    color: rgb(231, 18, 221);
+    text-decoration: none;
+}
+
+#inline_bold {
+    color: rgb(33, 239, 247);
+}
+
+#inline_code {
+    height: auto;
+    font-family: Consolas, monospace;
+    font-size: 20px;
+    border: 1px solid #e2e2e2;
+    background-color: #02102b;
+    padding: 20px 20px;
+    border-radius: 3px;
+    margin: 0 0 20px 0;
+    overflow-x: auto; 
+    color: white;
+}
+
+/* styling for next page button */
+#next_page {
+    text-align: right;
+}
+
+#next_page a {
+    color: rgb(33, 239, 247);
+    text-decoration: none;
+    border-style: solid;
+    border-color: blue;
+}
+
+#next_page a:hover {
+    background-color: blue;
+}
+
+/* sticky bar activated */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;  /* put sticky navbar in front of content while scrolling */
+}
+
+.sticky + .content {
+    padding-top: 60px;
+}
+/* css for sticky navbar - +++ END +++ */
+
+/* css for desktop dropdown menu - begin */
+.dropbtn {
+    background-color: rgb(25, 27, 31); /* paired with #navbar */
+    color: rgb(128, 128, 128);
+    padding: 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 110%;
+}
+
+.dropbtn a {
+    text-decoration: none;
+    color: rgb(128, 128, 128);
+    font-family: 'chalk';
+    font-size: 25px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    background-color: rgb(25, 27, 31);
+    min-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    font-size: 25px;
+}
+
+.dropdown-content a {
+    color: black;
+    color: rgb(128, 128, 128);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* styling for mouse hover of desktop navbar dropdown */
+.dropdown:hover .dropbtn {
+    background-color: #f1f1f1;
+}
+
+/* styling to maintain same colors on both button and dropdown on hover */
+.dropdown:hover #a_color {
+    display: block;
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.dropbtn:hover {
+    background-color: #f1f1f1;
+}
+
+/* css for desktop dropdown menu +++ END +++ */
+
+/* css for mobile dropdown */
+.mobiledrop {
+    display: none;
+}
+
+/* mobile drop down is display: none on desktop */
+#mdropdown1, #mdropdown2, #mdropdown3, #mdropdown4 {
+    display: none;
+}
+
+/* css for deactivated mobile topnav */
+@media screen and (max-width: 600px) {
+    .topnav .dropdown .dropbtn {
+        display: none;
+    } 
+    /* light switch disabled on mobile */
+    .switch {
+        display: none;
+    }
+    /* styling of mobile dropdown icon '=' */
+    .topnav a.icon {
+        float: right;
+        display: inline-block;
+        text-decoration: none;
+        color: red;
+        padding: 20px;
+        margin-right: 10px;
+    } 
+    /* styling for mouse hover of mobile dropdown icon '=' */
+    .topnav a.icon:hover {
+        color: blue;
+        background-color: gray;
+    }
+}
+
+/* css for activated mobile topnav */
+@media screen and (max-width: 600px) {
+  /* conflict with sticky nav bar .topnav.responsive {position: relative;} */
+    
+    .topnav.responsive .icon {
+        background-color: black;
+    } 
+    .topnav.responsive .dropdown {
+        float: none;
+    }
+    .topnav.responsive .dropdown-content {
+        position: relative;
+    }
+    .topnav.responsive .dropdown .dropbtn {
+        display: none;
+    }
+    .topnav.responsive .mobiledrop {
+        display: block;
+    } 
+    
+    /* mobile button styling */
+    .topnav.responsive .mobiledrop button {
+        text-align: center;
+        padding: 16px;
+        width: 100%;
+        text-decoration: none;
+        font-size: 17px;
+    } 
+    
+    /* mobile button mouse hover styling */
+    .topnav.responsive .mobiledrop button:hover {
+        color: blue;
+        background-color: gray;
+    } 
+    
+    /* mobile button drop down hover styling */
+    .topnav.responsive .mobiledrop a:hover {
+        color: blue;
+        background-color: gray;
+    } 
+    
+    /* mobile button dropdown styling , hover styling inherited from navbar a */
+    .topnav.responsive .mobiledrop a {
+        display: block;
+        text-align: center;
+        padding: 16px;
+        background-color: black;
+        color: red;
+        width: 100%;
+        text-decoration: none;
+    }   
+}
+
+@font-face {
+    font-family: 'chalk';
+    src: 
+        url('../fonts/DKMidnightChalker.otf')
+        format('truetype');
+}
+
+@font-face {
+    font-family: 'lilguy';
+    src:
+        url('../fonts/lilguy.ttf');
+}
+
+/* TODO: Currently a bug where mobile layout unstickied is behind the content, attempted modifying z-index to no avail */

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../assets/css/main.css" title="default">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- insert javascript for mobile layout drop down -->
+        <script src="../assets/scripts/mobile_nav_bar.js"></script>
+    </head>
+    
+    <body>
+        <div class="header">
+            <h2>
+                <a id="header_title" href="../index.html">
+                    Bug Hunter's Cookbook
+                </a>
+            </h2>
+            <p>written by <a id="about_pg_link" href="#">missing</a></p>
+        </div>
+
+        <!-- sticky nav bar class -->
+        <div class="topnav" id="navbar">
+
+            <!-- desktop drop down layout is display: none on mobile screen -->
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a id="a_color" href="../mips-asm/learning-mips-assembly-part-1.html">MIPS Assembly Basics</a>
+                </button>
+                <div class="dropdown-content">
+                    <a href="../mips-asm/learning-mips-assembly-part-1.html">Part 1: Introduction to MIPS Assembly</a>
+                    <a href="../mips-asm/computer-organization-crash-course-part-2.html">Part 2: Computer Organization Crash Course</a>
+                    <a href="../mips-asm/mips-registers-part-3.html">Part 3: MIPS Registers</a>
+                    <a href="../mips-asm/the-stack-part-4.html">Part 4: The Stack</a>
+                    <a href="../mips-asm/mips-instruction-set-part-5.html">Part 5: MIPS Instruction Set</a>
+                    <a href="../mips-asm/jumps-and-branches-part-6.html">Part 6: Jumps and Branches</a>
+                    <a href="../mips-asm/calling-conventions-part-7.html">Part 7: Calling Conventions</a>
+                </div>
+            </div> 
+            
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a id="a_color" href="#">Embedded VR</a>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Getting Physical Access</a>
+                    <a href="#">Dumping the Firmware</a>
+                    <a href="#">Identifying the Attack Surface</a>
+                    <a href="#">Finding Bugs - Fuzzing</a>
+                    <a href="#">Reverse Engineering the Firmware</a>
+                    <a href="#">Finding Bugs - Static Analysis</a>
+                </div>
+            </div> 
+            
+            <div class="dropdown">
+                <button class="dropbtn"><a id="a_color" href="#">Lab Setup</a></button>
+                <div class="dropdown-content">
+                  <a href="#">Setting up and using MARS MIPS simulator</a>
+                  <a href="#">Labbing on a MIPS qemu VM</a>
+                </div>
+            </div> 
+            <!-- [D] Further Resources DESKTOP dropdown block -->
+            <div class="dropdown">
+                <button class="dropbtn"><a id="a_color" href="./resources.html">Further Resources</a></button>
+                <div class="dropdown-content">
+                  <a href="http://www.devttys0.com/">devttys0</a>
+                  <a href="https://www.amazon.com/Second-Morgan-Kaufmann-Computer-Architecture/dp/0120884216">See MIPS Run</a>
+                  <a href="https://azeria-labs.com/">Azeria Labs</a>
+                </div>
+            </div> 
+            
+            <!-- mobile drop down layout is display: none on desktop -->
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown1')">
+                    MIPS Assembly Basics
+                </button>
+                <div id="mdropdown1">
+                    <a href="../mips-asm/learning-mips-assembly-part-1.html">Part 1: Introduction to MIPS Assembly</a>
+                    <a href="../mips-asm/computer-organization-crash-course-part-2.html">Part 2: Computer Organization Crash Course</a>
+                    <a href="../mips-asm/mips-registers-part-3.html">Part 3: MIPS Registers</a>
+                    <a href="../mips-asm/the-stack-part-4.html">Part 4: The Stack</a>
+                    <a href="../mips-asm/mips-instruction-set-part-5.html">Part 5: MIPS Instruction Set</a>
+                    <a href="../mips-asm/jumps-and-branches-part-6.html">Part 6: Jumps and Branches</a>
+                    <a href="../mips-asm/calling-conventions-part-7.html">Part 7: Calling Conventions</a>
+                </div>
+            </div>
+            
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown2')">
+                    Embedded VR
+                </button>
+                <div id="mdropdown2">
+                    <a href="#">Getting Physical Access</a>
+                    <a href="#">Dumping the Firmware</a>
+                    <a href="#">Identifying the Attack Surface</a>
+                    <a href="#">Finding Bugs - Fuzzing</a>
+                    <a href="#">Reverse Engineering the Firmware</a>
+                    <a href="#">Finding Bugs - Static Analysis</a>
+                </div>
+            </div>
+            
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown3')">
+                    Lab Setup
+                </button>
+                <div id="mdropdown3">
+                    <a href="#">Setting up and using MARS MIPS simulator</a>
+                    <a href="#">Labbing on a MIPS qemu VM</a>
+                </div>
+            </div>
+            <!-- [M] Further Resources MOBILE dropdown block -->
+            <div class="mobiledrop">
+                <button onclick="show_mobile_element('mdropdown4')">
+                    Further Resources
+                </button>
+                <div id="mdropdown4">
+                    <a href="http://www.devttys0.com/">devttys0</a>
+                    <a href="https://www.amazon.com/Second-Morgan-Kaufmann-Computer-Architecture/dp/0120884216">See MIPS Run</a>
+                    <a href="https://azeria-labs.com/">Azeria Labs</a>
+                </div>
+            </div>
+                
+            <!-- button for accessing mobile drop down layout activated on small screen size -->
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="access_mobile_nav_bar()">&#9776;</a>
+
+        <!-- end of navbar -->
+        </div>
+
+        <div class="content">
+            <h3 id="section_head">Part 6: Jumps and Branches</h3>
+            
+            <p>The CPU will execute instructions in sequential order from top to bottom. This is good for simple programs but what if we want to do more than just add two numbers? For more complex programs, we may need loops or other conditions and these are accomplished through jumps and branches.</p>
+            
+            <h4 id="section_head">What is a branch?</h4>
+            <p>A branch is like walking and reaching a fork in the road. There are two paths from where you are standing and depending on which path you choose, you will go somewhere else.</p>
+            
+            <p align="center"><img src="../assets/images/fork.png"></p>
+            
+            <p>When disassembling a program and viewing the graph mode, a typical representation of a branch may look like this: </p>
+            
+            <p align="center"><img src="../assets/images/branch_disasm.png" width="100%"></p>
+            
+            <p>The fork in the road is where the end of the first block occurs where there is a green arrow and a red arrow leading to separate blocks of code. The green path will be taken if the branch condition is true and the red path will be taken if the branch condition is false.</p>
+            
+            <p>In this example, <b id="inline_bold">bnez $v0, 0x814</b>, if $v0 does NOT contain the number 0, then the code will take the green path and otherwise take the red path.</p>
+        
+            <h4 id="section_head">Branch Delay Slot</h4>
+            <p>Branching seems simple enough; however, in MIPS implementation it is a little bit more nuanced.</p>
+            <p>When the processor executes an instruction, the program counter is advanced during the Instruction Fetch (IF) stage.</p>
+            <p>Due to the pipeline structure where when a jump or branch is being executed and the instruction afterwards would also be put into the pipeline, MIPS implements something called the <b id="inline_bold">branch delay slot</b>.</p>
+            <p>Control hazards occur because the $pc after a branch is not known until it is figured out if the branch should be taken or not.</p>
+            <p>Instead of throwing the next instruction away when taking the branch, the instruction that is directly below a branch or jump <b id="inline_bold">always runs</b> whether the branch is taken or not. This is why the instruction position after a branch or jump is called the branch delay slot.</p>
+            
+            <p>As mentioned before, $pc is modified by 4 after the instruction fetch stage; however, when the branch is taken, $pc is modified during the branch instruction's execution (EX) stage. This affects what is chosen to be the next instruction after the branch delay slot that will be brought into the pipeline.</p>
+            
+            <p>For the following instructions: </p>
+            <pre id="inline_code">
+            0x7e4  lw $v0, 0x18($fp)
+            0x7e8  bnez $v0, 0x814
+            <b style="color:purple">0x7ec  noop</b>                            # branch delay slot
+            <b style="color:red">0x7f0  lw $v0, -0x7fd0($gp)</b>            # branch NOT taken
+            0x7f4  addiu $a0, $v0, str.x_is_0
+            ...
+            <b style="color:green">0x814  lw $v0, -0x7fd0($gp)</b>            # branch taken
+            0x818  addiu $a0, $v0, str.x_is_NOT_0
+            </pre>
+            
+            <p>If the branch is <b style="color:green">taken</b>, <code style="font-size:20px;color: rgb(33, 239, 247);">lw $v0, -0x7fd0($gp)</code> from address <code style="font-size:20px;color: rgb(33, 239, 247);">0x814</code> will be put into the pipeline.</p>
+            <div style="display: block; margin-bottom: 50px;overflow-x: auto; ">
+                <table>
+                    <tr>
+                        <th>$pc</th>
+                        <th></th>
+                        <th>Cycles</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+                    </tr>
+                    <tr> <!-- row 1 -->
+                        <td>0x7e4</td>
+                        <td>lw $v0, 0x18($fp)</td>
+                        <td></td>
+                        <td>IF</td>
+                        <td>ID</td>
+                        <td>EX</td>
+                        <td>ME</td>
+                        <td>WB</td>
+                    </tr>
+                    <tr> <!-- row 2 -->
+                        <td>0x7e8</td>
+                        <td>bnez $v0, 0x814</td>
+                        <td></td>
+                        <td></td>
+                        <td><b id="inline_bold">IF</b></td>
+                        <td>ID</td>
+                        <td><b id="inline_bold">EX</b></td>
+                        <td>ME</td>
+                        <td>WB</td>
+                    </tr>
+                    <tr>
+                        <td><b style="color:purple">0x7ec</b></td>
+                        <td><b style="color:purple">noop</b></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><b id="inline_bold">IF</b></td>
+                        <td>ID</td>
+                        <td>EX</td>
+                        <td>ME</td>
+                        <td>WB</td>
+                    </tr>
+                    <tr>
+                        <td><b style="color:green">0x814&nbsp;&nbsp;</b></td>
+                        <td><b style="color:green">lw $v0, -0x7fd0($gp)</b></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><b style="color:green">IF</b></td>
+                        <td>ID</td>
+                        <td>EX</td>
+                        <td>ME</td>
+                        <td>WB</td>
+                    </tr>
+                    <tr>
+                        <td>0x818</td>
+                        <td>addiu $a0, $v0, str.x_is_NOT_0</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>IF</td>
+                        <td>ID</td>
+                        <td>EX</td>
+                        <td>ME</td>
+                        <td>WB</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <p>If the branch is <b style="color:red">NOT taken</b>, $pc has not been modified by the branch instruction's execution stage, so the instruction from address <code style="font-size:20px;color: rgb(33, 239, 247);">0x7f0</code> will be in the pipeline:</p>
+            <div style="display: block; margin-bottom: 50px;overflow-x: auto; ">
+                <table>
+                    <tr>
+                        <th>$pc</th>
+                        <th></th>
+                        <th>Cycles</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+                    </tr>
+                    <tr> <!-- row 1 -->
+                        <td>0x7e4</td>
+                        <td>lw $v0, 0x18($fp)</td>
+                        <td></td>
+                        <td>IF</td>
+                        <td>ID</td>
+                        <td>EX</td>
+                        <td>ME</td>
+                        <td>WB</td>
+                    </tr>
+                    <tr> <!-- row 2 -->
+                        <td>0x7e8</td>
+                        <td>bnez $v0, 0x814</td>
+                        <td></td>
+                        <td></td>
+                        <td><b id="inline_bold">IF</b></td>
+                        <td>ID</td>
+                        <td>EX</td>
+                        <td>ME</td>
+                        <td>WB</td>
+                    </tr>
+                    <tr>
+                        <td><b style="color:purple">0x7ec&nbsp;&nbsp;</b></td>
+                        <td><b style="color:purple">noop</b></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><b id="inline_bold">IF</b></td>
+                        <td>ID</td>
+                        <td>EX</td>
+                        <td>ME</td>
+                        <td>WB</td>
+                    </tr>
+                    <tr>
+                        <td><b style="color:red">0x7f0</b></td>
+                        <td><b style="color:red">lw $v0, -0x7fd0($gp)</b></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><b style="color:red">IF</b></td>
+                        <td>ID</td>
+                        <td>EX</td>
+                        <td>ME</td>
+                        <td>WB</td>
+                    </tr>
+                    <tr>
+                        <td>0x7f4</td>
+                        <td>addiu $a0, $v0, str.x_is_0</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>IF</td>
+                        <td>ID</td>
+                        <td>EX</td>
+                        <td>ME</td>
+                        <td>WB</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <p>Note: When no work is to be performed upon branching, often a noop is placed in the branch delay slot.</p>
+            
+            <h4 id="section_head">So what is a jump?</h4>
+            <p>Jumps and branches both modify the program counter ($pc) in order to change code flow of the program and both utilize the branch delay slot; however, they are different based on how they modify the program counter.</p>
+            <p>Branches are <b id="inline_bold">conditional</b> and are used to provide logic to the program and make it do different things. Branches require several bits in the machine code instruction for the condition so they have less bits to use for the location of the branch. That's why branches use a specified offset from the current program counter and can't go as far as a jump.</p>
+            <p>Jumps are <b id="inline_bold">unconditional</b> and have more bits to go to a specified 26-bit memory address.</p>
+            <p>In short, jumps can go to code that is a greater distance in memory using an absolute address whereas branches have a shorter range and are relative because they are conditional.</p>
+
+            
+            <h4>Further Reading</h4>
+            <p>1. <a id="styled_link" href="https://blogs.msdn.microsoft.com/oldnewthing/20180412-00/?p=98495">Branch Delay Slot Tricks</a></p>
+            <p>2. <a id="styled_link" href="https://en.wikipedia.org/wiki/Delay_slot">Delay Slot [ Wikipedia ]</a></p>
+            <p>2. <a id="styled_link" href="http://web.cs.iastate.edu/~prabhu/Tutorial/PIPELINE/branchPred.html#Delayed">Branch Prediction Schemes (IA State)</a></p>
+            
+            <p id="next_page"><a href="./calling-conventions-part-7.html">Part 7: Calling Conventions</a></p>    
+        </div>
+        
+        <!-- javascript for sticky nav bar -->
+        <script>
+            window.onscroll = function() { scroll_sticky_nav_bar() };
+
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop;
+
+            function scroll_sticky_nav_bar() {
+              if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+              } else {
+                navbar.classList.remove("sticky");
+              }
+            }
+        </script>
+        
+    </body>
+    
+</html>
