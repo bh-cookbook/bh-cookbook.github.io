@@ -190,8 +190,8 @@
             <p>An example of two instructions equivalent to a <b id="inline_bold">push 100</b> might be:</p>
             
             <ol style="text-align:center; list-style-position: inside;">
-                <li>lui ($sp), 100</li>
                 <li>sub $sp, $sp, 4</li>
+                <li>lui ($sp), 100</li>                
             </ol>
             
             <p>After all of this mention of push and pop, this is not to say that stack elements cannot be accessed directly. Often stack elements are accessed by an offset from the current stack pointer.</p>
