@@ -281,4 +281,6 @@ body {
         url('../fonts/lilguy.ttf');
 }
 
-/* TODO: Currently a bug where mobile layout unstickied is behind the content, attempted modifying z-index to no avail */
+/* TODO: Currently a bug where mobile layout unstickied is behind the content, attempted modifying z-index to no avail 
+ * Fixed by doing nothing when navbar is "topnav responsive sticky"
+ * */
