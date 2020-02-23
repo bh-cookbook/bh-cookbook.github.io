@@ -116,7 +116,12 @@ body {
 .dropbtn {
     background-color: rgb(25, 27, 31); /* paired with #navbar */
     color: rgb(128, 128, 128);
-    padding: 20px;
+
+    /* switched from padding: 20px to 15px to fix bug on certain browsers 
+     * when hovering the dropdown, there is a gap so the actual dropdown 
+     * can almost never be clicked on */
+    padding: 15px;
+
     font-size: 16px;
     border: none;
     cursor: pointer;
