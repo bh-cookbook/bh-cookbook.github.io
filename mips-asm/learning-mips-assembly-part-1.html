@@ -308,6 +308,8 @@
             function scroll_sticky_nav_bar() {
               if (window.pageYOffset >= sticky) {
                 navbar.classList.add("sticky")
+              } else if (list_includes_topnav_responsive_sticky(navbar.classList) == true) {
+
               } else {
                 navbar.classList.remove("sticky");
               }

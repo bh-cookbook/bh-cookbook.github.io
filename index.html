@@ -144,18 +144,20 @@
         
         <!-- javascript for sticky nav bar -->
         <script>
-            window.onscroll = function() { scroll_sticky_nav_bar() };
+	    window.onscroll = function() { scroll_sticky_nav_bar() };
 
-            var navbar = document.getElementById("navbar");
-            var sticky = navbar.offsetTop;
+	    var navbar = document.getElementById("navbar");
+	    var sticky = navbar.offsetTop;
 
-            function scroll_sticky_nav_bar() {
-              if (window.pageYOffset >= sticky) {
-                navbar.classList.add("sticky")
-              } else {
-                navbar.classList.remove("sticky");
-              }
-            }
+	    function scroll_sticky_nav_bar() {
+		if (window.pageYOffset >= sticky) {
+		    navbar.classList.add("sticky")
+		} else if (list_includes_topnav_responsive_sticky(navbar.classList) == true) {
+		    console.log("list includes topnav responsive sticky");
+		} else {
+		    navbar.classList.remove("sticky");
+		}
+	    }
         </script>
         
     </body>
