@@ -83,6 +83,10 @@ body {
     color: white;
 }
 
+#drawing {
+    width: 100%;
+}
+
 /* styling for next page button */
 #next_page {
     text-align: right;
